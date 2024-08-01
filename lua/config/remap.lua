@@ -15,6 +15,16 @@ vim.keymap.set("n", "<leader>Y", '"+Y')
 vim.keymap.set("n", "<leader>pl", "<Cmd>Lazy<CR>")
 vim.keymap.set("n", "<leader>pm", "<Cmd>Mason<CR>")
 
+
+-- vim.keymap.set("n", "<C-V>", [["+p]], { desc = "copy from os clipboard" })
+vim.keymap.set("n", "<C-d>", "<C-d>zz_", { desc = "move the cursor down half page" })
+vim.keymap.set("n", "<C-u>", "<C-u>zz_", { desc = "move the cursor up half page" })
+vim.keymap.set("n", "}", "}zz_", { desc = "move the cursor up half page" })
+vim.keymap.set("n", "{", "{zz_", { desc = "move the cursor up half page" })
+vim.keymap.set("n", "n", "nzzzv", { desc = "something" })
+vim.keymap.set("n", "N", "Nzzzv", { desc = "something else" })
+
+
 --NOTE:commenting
 -- vim.keymap.set("n", "<leader>/",  function()
 --             return require("Comment.api").call(

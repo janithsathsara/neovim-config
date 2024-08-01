@@ -21,6 +21,12 @@ vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
+vim.opt.laststatus = 2
+vim.opt.linebreak = true
+vim.opt.ignorecase = true
+vim.opt.showtabline = 0
+vim.opt.foldcolumn = "0"
+
 -- vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
@@ -44,5 +50,28 @@ vim.api.nvim_create_autocmd(
         end
     }
 )
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+    pattern = "komorebi.json",
+    command = "set filetype=jsonc",
+})
+--NOTE: zen mode
+
+local isZenModeOn = false
+
+function toggleZenMode()
+    if isZenModeOn then
+        vim.opt.laststatus = 2
+        vim.opt.signcolumn = "yes"
+        -- vim.cmd("CodeiumDisable")
+    else
+        vim.opt.laststatus = 0
+        vim.opt.signcolumn = "no"
+        -- vim.cmd("CodeiumEnable")
+    end
+    isZenModeOn = not isZenModeOn
+end
+
+vim.keymap.set("n", "<leader>uz", toggleZenMode, { desc = "Zen Mode" })
 
 -- autocmd TextYankPost * silent! lua vim.highlight.on_yank {higroup='Visual', timeout=300}

@@ -8,6 +8,7 @@ return {
         },
         config = function()
             -- import mason
+            local telescope = require("telescope")
             local mason = require("mason")
 
             -- import mason-lspconfig
