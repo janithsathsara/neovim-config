@@ -36,6 +36,7 @@ return {
                     "lua_ls",
                     "emmet_ls",
                     "pyright",
+                    "marksman",
                 },
             })
 

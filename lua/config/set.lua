@@ -23,7 +23,7 @@ vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.laststatus = 2
 vim.opt.linebreak = true
-vim.opt.ignorecase = true
+vim.opt.ignorecase = false
 vim.opt.showtabline = 0
 vim.opt.foldcolumn = "0"
 
