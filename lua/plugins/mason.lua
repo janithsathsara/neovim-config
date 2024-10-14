@@ -47,7 +47,7 @@ return {
                     "black",
                     -- "isort",
                     -- "pylint",
-                    "eslint_d"
+                    "eslint_d",
                 },
             })
         end,
@@ -62,7 +62,7 @@ return {
             config.sources = {
                 -- Set a formatter
                 null_ls.builtins.formatting.stylua,
-                null_ls.builtins.formatting.prettierd,
+                null_ls.builtins.formatting.prettierd.with({ extra_filetypes = { "markdown" }, }),
                 null_ls.builtins.formatting.black,
                 null_ls.builtins.code_actions.refactoring,
                 null_ls.builtins.code_actions.gitsigns,

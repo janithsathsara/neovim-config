@@ -23,7 +23,7 @@ vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.laststatus = 2
 vim.opt.linebreak = true
-vim.opt.ignorecase = false
+vim.opt.ignorecase = true
 vim.opt.showtabline = 0
 vim.opt.foldcolumn = "0"
 
@@ -38,7 +38,7 @@ vim.opt.shortmess:append("t")
 vim.opt.shortmess:append("C")
 vim.opt.shortmess:append("I")
 
-vim.opt.cmdheight = 0
+vim.opt.cmdheight = 1
 
 
 vim.api.nvim_create_autocmd(

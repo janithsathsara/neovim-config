@@ -28,3 +28,12 @@ vim.keymap.set("n", "N", "Nzzzv", { desc = "something else" })
 vim.keymap.set("n", "<leader>C", "<Cmd>bufdo bdelete<CR><Cmd>Alpha<CR>", { desc = "close all buffers" })
 --Close current Buffer remap and go to header file
 vim.keymap.set("n", "<leader>c", "<Cmd>bdelete<CR>", { desc = "close current buffer" })
+
+--TODO: may not work with keymaps given. try it with <C-n> <C-p> and something else
+vim.keymap.set({ "i", "s" }, "<c-k>", function()
+    return vim.snippet.active { direction = 1 } and vim.snippet.jump(1)
+end, { silent = true })
+
+vim.keymap.set({ "i", "s" }, "<c-j>", function()
+    return vim.snippet.active { direction = -1 } and vim.snippet.jump(-1)
+end, { silent = true })
