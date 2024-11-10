@@ -4,7 +4,7 @@ return {
     opts = {},
     config = function()
         require('gitsigns').setup({
-            igns                         = {
+            signs                         = {
                 add          = { text = '┃' },
                 change       = { text = '┃' },
                 delete       = { text = '_' },
