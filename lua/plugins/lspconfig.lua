@@ -75,13 +75,6 @@ return {
                     capabilities = capabilities,
                 })
             end,
-            ["emmet_ls"] = function()
-                -- configure emmet language server
-                lspconfig["emmet_ls"].setup({
-                    capabilities = capabilities,
-                    filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
-                })
-            end,
             ["lua_ls"] = function()
                 -- configure lua server (with special settings)
                 lspconfig["lua_ls"].setup({
@@ -99,6 +92,24 @@ return {
                     },
                 })
             end,
+            ["pylsp"] = function()
+                lspconfig["pylsp"].setup({
+                    capabilities = capabilities,
+                    settings = {
+                        pylsp = {
+                            plugins = {
+                                pylsp_black = { enabled = false },
+                                pylsp_mypy = { enabled = false },
+                                pylsp_isort = { enabled = false },
+                                pyflakes = { enabled = false },
+                                autopep8 = { enabled = false },
+                                pycodestyle = { enabled = false },
+                                yapf = { enabled = false },
+                            }
+                        }
+                    },
+                })
+            end
         })
     end,
 }

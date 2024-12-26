@@ -34,7 +34,7 @@ return {
                     "html",
                     "cssls",
                     "lua_ls",
-                    "pyright",
+                    "pylsp",
                     "marksman",
                 },
             })
@@ -43,10 +43,11 @@ return {
                 ensure_installed = {
                     "stylua",
                     "prettierd",
-                    "black",
+                    -- "black",
                     -- "isort",
                     -- "pylint",
                     "eslint_d",
+                    "ruff",
                 },
             })
         end,
