@@ -14,8 +14,8 @@
 * [x] 9. change greeter color.
 * [x] 10. fix zen mode
 * [x] 11. fold columns <!--look through astro extension--->
-* [ ] 12. Add dap support
+* [x] 12. Add diffview.nvim 
 * [x] 13. fix autoformat for markdown files using prettierd
 * [x] 14. Add support to jump in between snippets ( tj devries completions video and snippet )
 * [ ] 15. Modify the support for < and > motions to select used text --- explain
-* [ ] 16. Add diffview.nvim 
+* [ ] 16. Add dap support
