@@ -6,11 +6,9 @@ function toggleZenMode()
     if isZenModeOn then
         vim.opt.laststatus = 2
         vim.opt.signcolumn = "yes"
-        vim.cmd("CodeiumEnable")
     else
         vim.opt.laststatus = 0
         vim.opt.signcolumn = "no"
-        vim.cmd("CodeiumDisable")
     end
     isZenModeOn = not isZenModeOn
 end

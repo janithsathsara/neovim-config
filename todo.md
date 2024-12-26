@@ -16,6 +16,6 @@
 * [x] 11. fold columns <!--look through astro extension--->
 * [ ] 12. Add dap support
 * [x] 13. fix autoformat for markdown files using prettierd
-* [ ] 14. Add support to jump in between snippets ( tj devries completions video and snippet )
-* [ ] 15. Modify the support for < and > motions to select used text
+* [x] 14. Add support to jump in between snippets ( tj devries completions video and snippet )
+* [ ] 15. Modify the support for < and > motions to select used text --- explain
 * [ ] 16. Add diffview.nvim 
