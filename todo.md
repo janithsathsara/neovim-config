@@ -17,5 +17,7 @@
 * [x] 12. Add diffview.nvim 
 * [x] 13. fix autoformat for markdown files using prettierd
 * [x] 14. Add support to jump in between snippets ( tj devries completions video and snippet )
-* [ ] 15. Modify the support for < and > motions to select used text --- explain
-* [ ] 16. Add dap support
+* [x] 15. Add blink.cmp to the configuration
+* [ ] 16. Modify the support for < and > motions to select used text --- explain
+* [ ] 18. Add dap support
+* [ ] 20. fix autoformat for markdown files using prettierd for neovim root dir
