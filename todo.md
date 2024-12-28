@@ -19,11 +19,10 @@
 * [x] 14. Add support to jump in between snippets ( tj devries completions video and snippet )
 * [x] 15. Add blink.cmp to the configuration
 * [x] 16. Add telescope-fzf-native.nvim to the config
-* [ ] 16. Modify the support for < and > motions to select used text --- explain
-* [ ] 18. Add dap support
+* [x] 18. Add dap support. Don't need the debugger.
     *  [x] looks like it requires two plugins. 
     * [x] mason-nvim-dap.nvim
     * [x] mfussenegger/nvim-dap
     * [x] This will help with the mason integration of dap.
-    * [ ] dap is not working yet. make it work
-* [ ] 19. fix autoformat for markdown files using prettierd for neovim root dir
+* [ ] 19. Modify the support for < and > motions to select used text --- explain
+* [ ] 20. fix autoformat for markdown files using prettierd for neovim root dir
