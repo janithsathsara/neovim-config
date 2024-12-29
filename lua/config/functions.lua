@@ -13,6 +13,7 @@ function toggleZenMode()
     isZenModeOn = not isZenModeOn
 end
 
+---@diagnostic disable-next-line: missing-set-fields
 vim.keymap.set("n", "<leader>uz", toggleZenMode, { desc = "Toggle zen Mode" })
 
 --NOTE:commenting

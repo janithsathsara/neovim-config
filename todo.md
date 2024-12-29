@@ -26,3 +26,8 @@
     * [x] This will help with the mason integration of dap.
 * [ ] 19. Modify the support for < and > motions to select used text --- explain
 * [ ] 20. fix autoformat for markdown files using prettierd for neovim root dir
+* [ ] 21. Find out about chezmoi. It may be able to setup dotfiles like stow
+* [ ] 22. install fzf-git 
+* [ ] 23. get back into rust. Install rust analyzer
+* [ ] 24. Correct the profile.ps1 and remove unwanted and commented out lines
+* [ ] 25. Wezterm can open tabs in the same folder as before. Just try harder
