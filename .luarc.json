@@ -3,5 +3,8 @@
         "vim",
         "toggleZenMode",
         "toggleComment"
+    ],
+    "diagnostics.disable": [
+        "missing-fields"
     ]
 }
