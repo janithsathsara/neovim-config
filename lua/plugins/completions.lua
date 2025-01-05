@@ -7,7 +7,7 @@ return {
 			"rafamadriz/friendly-snippets",
 			{ "L3MON4D3/LuaSnip", version = LuaSnip_version },
 		},
-		version = "*",
+		version = "v0.9.0",
 
 		---@module 'blink.cmp'
 		---@type blink.cmp.Config
