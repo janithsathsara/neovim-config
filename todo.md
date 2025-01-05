@@ -25,10 +25,11 @@
   - [x] mfussenegger/nvim-dap
   - [x] This will help with the mason integration of dap.
 * [x] 19. fix autoformat for markdown files using prettierd for neovim root dir
-* [ ] 20. Modify the support for < and > motions to select used text --- explain
-* [ ] 22. Remove .git/ folder from telescope search
+* [x] 20. Correct the profile.ps1 and remove unwanted and commented out lines
+* [x] 21. Add shell.nss from C:\Users\BlackPearl\scoop\persist\nilesoft-shell folder
+* [ ] 22. Modify the support for < and > motions to select used text --- explain
+* [ ] 23. Remove .git/ folder from telescope search
 * [ ] 24. Find out about chezmoi. It may be able to setup dotfiles like stow
-* [ ] 26. install fzf-git
-* [ ] 28. get back into rust. Install rust analyzer
-* [ ] 30. Correct the profile.ps1 and remove unwanted and commented out lines
-* [ ] 32. Wezterm can open tabs in the same folder as before. Just try harder
+* [ ] 25. install fzf-git
+* [ ] 26. get back into rust. Install rust analyzer
+* [ ] 27. Wezterm can open tabs in the same folder as before. Just try harder
