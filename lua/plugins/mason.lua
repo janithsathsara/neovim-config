@@ -38,6 +38,7 @@ return {
                     "lua_ls",
                     "pylsp",
                     "marksman",
+                    "taplo",
                 },
             })
 

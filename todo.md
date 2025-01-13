@@ -28,8 +28,9 @@
 * [x] 20. Correct the profile.ps1 and remove unwanted and commented out lines
 * [x] 21. Add shell.nss from C:\Users\BlackPearl\scoop\persist\nilesoft-shell folder
 * [x] 22. get back into rust. Install rust analyzer
-* [ ] 22. Modify the support for < and > motions to select used text --- explain
-* [ ] 23. Remove .git/ folder from telescope search
-* [ ] 24. Find out about chezmoi. It may be able to setup dotfiles like stow
-* [ ] 25. install fzf-git
-* [ ] 27. Wezterm can open tabs in the same folder as before. Just try harder
+* [x] 23. Removed emmetvim and added emmet-language-server
+* [x] 24. Modify the support for < and > motions to select used text --- explain --vim-swap. do not need it
+* [ ] 25. Remove .git/ folder from telescope search
+* [ ] 26. Find out about chezmoi. It may be able to setup dotfiles like stow
+* [ ] 27. install fzf-git
+* [ ] 28. Wezterm can open tabs in the same folder as before. Just try harder
