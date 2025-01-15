@@ -3,14 +3,14 @@
 local isZenModeOn = false
 
 function toggleZenMode()
-    if isZenModeOn then
-        vim.opt.laststatus = 2
-        vim.opt.signcolumn = "yes"
-    else
-        vim.opt.laststatus = 0
-        vim.opt.signcolumn = "no"
-    end
-    isZenModeOn = not isZenModeOn
+	if isZenModeOn then
+		vim.opt.laststatus = 2
+		vim.opt.signcolumn = "yes"
+	else
+		vim.opt.laststatus = 0
+		vim.opt.signcolumn = "no"
+	end
+	isZenModeOn = not isZenModeOn
 end
 
 ---@diagnostic disable-next-line: missing-set-fields
@@ -18,14 +18,14 @@ vim.keymap.set("n", "<leader>uz", toggleZenMode, { desc = "Toggle zen Mode" })
 
 --NOTE:commenting
 function toggleComment()
-    local mode = vim.api.nvim_get_mode().mode
-    if mode == 'n' then
-        vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('gcc', true, false, true), 'n', false)
-    elseif mode == 'v' then
-        vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('gc', true, false, true), 'x', false)
-    else
-        return nil
-    end
+	local mode = vim.api.nvim_get_mode().mode
+	if mode == "n" then
+		vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("gcc", true, false, true), "n", false)
+	elseif mode == "v" then
+		vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("gc", true, false, true), "x", false)
+	else
+		return nil
+	end
 end
 
 vim.keymap.set({ "n", "v" }, "<leader>/", toggleComment, { desc = "Toggle comment" })
@@ -46,10 +46,6 @@ vim.keymap.set({ "n", "v" }, "<leader>/", toggleComment, { desc = "Toggle commen
 --   "<Esc><Cmd>lua require('Comment.api').locked('toggle.linewise')(vim.fn.visualmode())<CR>",
 --   desc = "Toggle comment",
 -- }
-
-
-
-
 
 --NOTE:vim
 -- vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")

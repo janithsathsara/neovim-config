@@ -34,3 +34,5 @@
 * [ ] 26. Find out about chezmoi. It may be able to setup dotfiles like stow
 * [ ] 27. install fzf-git
 * [ ] 28. Wezterm can open tabs in the same folder as before. Just try harder
+* [ ] 29. Yazi file manager ( Maybe )
+* [ ] 30. Add snacks.nvim

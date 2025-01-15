@@ -1,10 +1,10 @@
 return {
-	{
-		"folke/todo-comments.nvim",
+    {
+        "folke/todo-comments.nvim",
         lazy = false,
-        priority = 100,
-		opts = function ()
-          vim.keymap.set("n","<leader>ft","<Cmd>TodoTelescope<CR>", {desc = "Find todos"})
+        priority = 1000,
+        opts = function()
+            vim.keymap.set("n", "<leader>ft", "<Cmd>lua Snacks.picker.todo_comments()<CR>", { desc = "Find todos" })
         end,
-	},
+    },
 }

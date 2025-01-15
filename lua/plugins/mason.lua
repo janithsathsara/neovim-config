@@ -46,9 +46,6 @@ return {
                 ensure_installed = {
                     "stylua",
                     "prettierd",
-                    -- "black",
-                    -- "isort",
-                    -- "pylint",
                     "eslint_d",
                     "ruff",
                 },
@@ -64,7 +61,9 @@ return {
 
             config.sources = {
                 -- Set a formatter
-                null_ls.builtins.formatting.stylua,
+                null_ls.builtins.formatting.stylua.with({
+                    args = { "--column_width", "120" },
+                }),
                 null_ls.builtins.formatting.prettierd.with({ extra_filetypes = { "markdown" } }),
                 null_ls.builtins.formatting.black,
                 null_ls.builtins.code_actions.refactoring,
