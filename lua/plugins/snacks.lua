@@ -3,6 +3,7 @@ return {
     priority = 1000,
     lazy = false,
     opts = {
+        quickfile = { enable = true },
         picker = { enable = true },
         dashboard = { enable = true },
         bigfile = { enable = true },
@@ -31,7 +32,7 @@ return {
         { "<leader>sc", function() Snacks.picker.command_history() end,                         desc = "Command History" },
         { "<leader>sC", function() Snacks.picker.commands() end,                                desc = "Commands" },
         { "<leader>sd", function() Snacks.picker.diagnostics() end,                             desc = "Diagnostics" },
-        { "<leader>sh", function() Snacks.picker.help() end,                                    desc = "Help Pages" },
+        { "<leader>fh", function() Snacks.picker.help() end,                                    desc = "Help Pages" },
         { "<leader>sH", function() Snacks.picker.highlights() end,                              desc = "Highlights" },
         { "<leader>sj", function() Snacks.picker.jumps() end,                                   desc = "Jumps" },
         { "<leader>fk", function() Snacks.picker.keymaps() end,                                 desc = "Keymaps" },
