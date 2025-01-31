@@ -13,7 +13,7 @@ return {
     keys = {
         -- Basic jump anywhere
         -- Example: Press 's', type 'function', press label to jump
-        { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end,       desc = "Flash" }, -- jump anywhere. Can be done with y or d as well.
+        { "z", mode = { "n", "x", "o" }, function() require("flash").jump() end,       desc = "Flash" }, -- jump anywhere. Can be done with y or d as well.
 
         -- Jump to treesitter nodes
         -- Example: Inside a function, press 'S' to highlight and jump to:
@@ -21,7 +21,7 @@ return {
         -- - return statements
         -- - function names
         -- - code blocks
-        { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" }, -- jump and highlight treesitter nodes
+        { "Z", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" }, -- jump and highlight treesitter nodes
 
         -- Remote operations
         -- Example: yr{text} will:

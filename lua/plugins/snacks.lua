@@ -4,7 +4,9 @@ return {
     lazy = false,
     opts = {
         quickfile = { enable = true },
-        picker = { enable = true },
+        picker = {
+            enable = true,
+        },
         dashboard = { enable = true },
         bigfile = { enable = true },
         indent = { enable = true },

@@ -62,7 +62,7 @@ return {
             config.sources = {
                 -- Set a formatter
                 null_ls.builtins.formatting.stylua.with({
-                    args = { "--column_width", "120" },
+                    args = { "--column-width", "250" },
                 }),
                 null_ls.builtins.formatting.prettierd.with({ extra_filetypes = { "markdown" } }),
                 null_ls.builtins.formatting.black,

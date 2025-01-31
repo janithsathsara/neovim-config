@@ -10,7 +10,7 @@
 * [x] 5. codeium
 * [x] 6. close all buffers shortcut
 * [x] 7. highlight movement doesn't work
-* [x] 8. Fix greeter to have actual functions instead of the existing ones
+* [x] 8. Fix geeter to have actual functions instead of the existing ones
 * [x] 9. change greeter color.
 * [x] 10. fix zen mode
 * [x] 11. fold columns <!--look through astro extension--->
@@ -30,9 +30,16 @@
 * [x] 22. get back into rust. Install rust analyzer
 * [x] 23. Removed emmetvim and added emmet-language-server
 * [x] 24. Modify the support for < and > motions to select used text --- explain --vim-swap. do not need it
-* [ ] 25. Remove .git/ folder from telescope search
-* [ ] 26. Find out about chezmoi. It may be able to setup dotfiles like stow
-* [ ] 27. install fzf-git
-* [ ] 28. Wezterm can open tabs in the same folder as before. Just try harder
-* [ ] 29. Yazi file manager ( Maybe )
-* [ ] 30. Add snacks.nvim
+* [x] 25. install fzf-git
+* [x] 26. Yazi file manager ( Maybe )
+* [x] 27. Add snacks.nvim
+* [x] 28. Remove .git/ folder from telescope search
+* [x] 29. Add hidden files to snacks.nvim
+* [x] 30. Checkout nushell
+* [x] 31. Wezterm can open tabs in the same folder as before. Just try harder
+* [x] 32. Fix debuggers for python and javascript
+* [x] 33. Flash should be changed to z maybe. check it out. Cannot
+* [ ] 34. Find out about chezmoi. It may be able to setup dotfiles like stow
+* [ ] 35. Wezterm tmux behavior with workspaces.
+* [ ] 36. Conform and nvim-lint instead of null-ls
+* [ ] 37. Check if python files can use command arguement in debugging.

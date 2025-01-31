@@ -31,3 +31,11 @@ vim.keymap.set("n", "N", "Nzzzv", { desc = "something else" })
 vim.keymap.set("n", "<leader>C", "<Cmd>bufdo bdelete<CR><Cmd>lua Snacks.dashboard()<CR>", { desc = "close all buffers" })
 --Close current Buffer remap and go to header file
 vim.keymap.set("n", "<leader>c", "<Cmd>bdelete<CR>", { desc = "close current buffer" })
+
+--unmap keys
+-- vim.keymap.set('n', 'x', '<Nop>', { silent = true })
+-- vim.keymap.set('v', 'x', '<Nop>', { silent = true })
+vim.keymap.set('v', 's', '<Nop>', { silent = true })
+vim.keymap.set('n', 's', '<Nop>', { silent = true })
+vim.keymap.set('v', 'S', '<Nop>', { silent = true })
+vim.keymap.set('n', 'S', '<Nop>', { silent = true })
