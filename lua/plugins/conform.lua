@@ -7,13 +7,13 @@ return {
 		conform.setup({
 			formatters_by_ft = {
 				lua = { "stylua" },
-				svelte = { { "prettierd", "prettier", stop_after_first = true } },
-				javascript = { { "prettierd", "prettier", stop_after_first = true } },
-				typescript = { { "prettierd", "prettier", stop_after_first = true } },
-				javascriptreact = { { "prettierd", "prettier", stop_after_first = true } },
-				typescriptreact = { { "prettierd", "prettier", stop_after_first = true } },
-				json = { { "prettierd", "prettier", stop_after_first = true } },
-				markdown = { { "prettierd", "prettier", stop_after_first = true } },
+				svelte = { "prettierd" },
+				javascript = { "prettierd" },
+				typescript = { "prettierd" },
+				javascriptreact = { "prettierd" },
+				typescriptreact = { "prettierd" },
+				json = { "prettierd" },
+				markdown = { "prettierd" },
 				html = { "htmlbeautifier" },
 				bash = { "beautysh" },
 				rust = { "rustfmt" },
@@ -24,6 +24,7 @@ return {
 			},
 			formatters = {
 				stylua = {
+					inherit = true,
 					prepend_args = { "--column-width", "200" },
 				},
 			},
