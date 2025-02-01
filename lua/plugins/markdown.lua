@@ -1,13 +1,22 @@
 return {
-	"MeanderingProgrammer/markdown.nvim",
-	main = "render-markdown",
+	"MeanderingProgrammer/render-markdown.nvim",
 	lazy = false,
 	priority = 100,
 	opts = {
-		{ latex = { enabled = false } },
+        treesitter = {
+            enabled = true,
+            highlight = true,
+        },
+		latex = { enabled = false },
 	},
-	name = "render-markdown", -- Only needed if you have another plugin named markdown.nvim
-	-- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
-	-- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
+    config = function()
+		require("nvim-treesitter.configs").setup({
+			highlight = {
+				enable = true,
+				-- Ensure markdown and markdown_inline are included
+				additional_vim_regex_highlighting = { "markdown", "markdown_inline" },
+			},
+		})
+	end,
 	dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" }, -- if you prefer nvim-web-devicons
 }

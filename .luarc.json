@@ -5,6 +5,7 @@
         "toggleComment"
     ],
     "diagnostics.disable": [
-        "missing-fields"
+        "missing-fields",
+        "assign-type-mismatch"
     ]
 }

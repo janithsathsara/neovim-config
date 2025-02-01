@@ -1,6 +1,6 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-vim.g.user_emmet_leader_key = "<C-z>"
+-- vim.g.user_emmet_leader_key = "<C-z>"
 
 vim.keymap.set("n", "<leader>q", "<Cmd>q<CR>", { desc = "Exit" })
 vim.keymap.set("n", "<leader>w", "<Cmd>w<CR>", { desc = "Save" })
@@ -26,16 +26,22 @@ vim.keymap.set("n", "}", "}zz_", { desc = "move the cursor up half page" })
 vim.keymap.set("n", "{", "{zz_", { desc = "move the cursor up half page" })
 vim.keymap.set("n", "n", "nzzzv", { desc = "something" })
 vim.keymap.set("n", "N", "Nzzzv", { desc = "something else" })
+vim.keymap.set("n", "<leader>lg", vim.lsp.buf.format, { desc = "LSP format" })
 
 --close all buffers remap
-vim.keymap.set("n", "<leader>C", "<Cmd>bufdo bdelete<CR><Cmd>lua Snacks.dashboard()<CR>", { desc = "close all buffers" })
+vim.keymap.set(
+	"n",
+	"<leader>C",
+	"<Cmd>bufdo bdelete<CR><Cmd>lua Snacks.dashboard()<CR>",
+	{ desc = "close all buffers" }
+)
 --Close current Buffer remap and go to header file
 vim.keymap.set("n", "<leader>c", "<Cmd>bdelete<CR>", { desc = "close current buffer" })
 
 --unmap keys
 -- vim.keymap.set('n', 'x', '<Nop>', { silent = true })
 -- vim.keymap.set('v', 'x', '<Nop>', { silent = true })
-vim.keymap.set('v', 's', '<Nop>', { silent = true })
-vim.keymap.set('n', 's', '<Nop>', { silent = true })
-vim.keymap.set('v', 'S', '<Nop>', { silent = true })
-vim.keymap.set('n', 'S', '<Nop>', { silent = true })
+vim.keymap.set("v", "s", "<Nop>", { silent = true })
+vim.keymap.set("n", "s", "<Nop>", { silent = true })
+vim.keymap.set("v", "S", "<Nop>", { silent = true })
+vim.keymap.set("n", "S", "<Nop>", { silent = true })
