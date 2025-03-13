@@ -27,36 +27,21 @@ return {
 				-- local opts = { buffer = ev.buf, silent = true }
 
 				-- set keybinds
-				keymap.set("n", "<leader>lr", "<cmd>Telescope lsp_references<CR>", { desc = "LSP references" }) -- show definition, references
+				-- keymap.set("n", "<leader>lr", "<cmd>Telescope lsp_references<CR>", { desc = "LSP references" }) -- show definition, references
 
 				keymap.set("n", "<leader>lD", vim.lsp.buf.declaration, { desc = "LSP declaration" }) -- go to declaration
 
-				keymap.set("n", "<leader>ld", "<cmd>Telescope lsp_definitions<CR>", { desc = "LSP definitions" }) -- show lsp definitions
+				-- keymap.set("n", "<leader>ld", "<cmd>Telescope lsp_definitions<CR>", { desc = "LSP definitions" }) -- show lsp definitions
 
-				keymap.set(
-					"n",
-					"<leader>li",
-					"<cmd>Telescope lsp_implementations<CR>",
-					{ desc = "LSP implementations" }
-				) -- show lsp implementations
+				-- keymap.set("n", "<leader>li", "<cmd>Telescope lsp_implementations<CR>", { desc = "LSP implementations" }) -- show lsp implementations
 
-				keymap.set(
-					"n",
-					"<leader>lt",
-					"<cmd>Telescope lsp_type_definitions<CR>",
-					{ desc = "LSP type definitions" }
-				) -- show lsp type definitions
+				-- keymap.set("n", "<leader>lt", "<cmd>Telescope lsp_type_definitions<CR>", { desc = "LSP type definitions" }) -- show lsp type definitions
 
 				keymap.set({ "n", "v" }, "<leader>la", vim.lsp.buf.code_action, { desc = "LSP code actions" }) -- see available code actions, in visual mode will apply to selection
 
 				keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Smart rename" }) -- smart rename
 
-				keymap.set(
-					"n",
-					"<leader>lD",
-					"<cmd>Telescope diagnostics bufnr=0<CR>",
-					{ desc = "Show buffer diagnosis" }
-				) -- show  diagnostics for file
+				-- keymap.set("n", "<leader>lD", "<cmd>Telescope diagnostics bufnr=0<CR>", { desc = "Show buffer diagnosis" }) -- show  diagnostics for file
 
 				keymap.set("n", "<leader>ld", vim.diagnostic.open_float, { desc = "Show line diagnosis" }) -- show diagnostics for line
 

@@ -27,6 +27,7 @@ vim.opt.linebreak = true
 vim.opt.ignorecase = true
 vim.opt.showtabline = 0
 vim.opt.foldcolumn = "0"
+vim.opt.cursorcolumn = false
 
 -- vim.opt.isfname:append("@-@")
 
@@ -42,15 +43,15 @@ vim.opt.shortmess:append("I")
 vim.opt.cmdheight = 1
 
 vim.api.nvim_create_autocmd("TextYankPost", {
-    pattern = "*",
-    callback = function()
-        vim.highlight.on_yank({ higroup = "IncSearch", timeout = 200 })
-    end,
+	pattern = "*",
+	callback = function()
+		vim.highlight.on_yank({ higroup = "IncSearch", timeout = 200 })
+	end,
 })
 
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-    pattern = "komorebi.json",
-    command = "set filetype=jsonc",
+	pattern = "komorebi.json",
+	command = "set filetype=jsonc",
 })
 
 -- autocmd TextYankPost * silent! lua vim.highlight.on_yank {higroup='Visual', timeout=300}

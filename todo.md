@@ -43,3 +43,4 @@
 * [ ] 35. Wezterm tmux behavior with workspaces.
 * [ ] 36. Conform and nvim-lint instead of null-ls
 * [ ] 37. Check if python files can use command arguement in debugging.
+* [ ] 38. Check and fix komorebi bar font

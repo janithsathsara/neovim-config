@@ -13,6 +13,7 @@ return {
 				javascriptreact = { "prettierd" },
 				typescriptreact = { "prettierd" },
 				json = { "prettierd" },
+				jsonc = { "prettierd" },
 				markdown = { "prettierd" },
 				html = { "htmlbeautifier" },
 				bash = { "beautysh" },
@@ -26,6 +27,10 @@ return {
 				stylua = {
 					inherit = true,
 					prepend_args = { "--column-width", "200" },
+				},
+				rustfmt = {
+					inherit = true,
+					prepend_args = { "--config", "max_width=150" },
 				},
 			},
 		})
