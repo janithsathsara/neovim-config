@@ -39,8 +39,10 @@
 * [x] 31. Wezterm can open tabs in the same folder as before. Just try harder
 * [x] 32. Fix debuggers for python and javascript
 * [x] 33. Flash should be changed to z maybe. check it out. Cannot
-* [ ] 34. Find out about chezmoi. It may be able to setup dotfiles like stow
-* [ ] 35. Wezterm tmux behavior with workspaces.
-* [ ] 36. Conform and nvim-lint instead of null-ls
-* [ ] 37. Check if python files can use command arguement in debugging.
+* [x] 34. Find out about chezmoi. It may be able to setup dotfiles like stow
+* [x] 35. Wezterm tmux behavior with workspaces.
+* [x] 36. Conform and nvim-lint instead of null-ls
+* [x] 37. Check if python files can use command arguement in debugging.
 * [ ] 38. Check and fix komorebi bar font
+* [ ] 39. remove the deprecated stuff
+* [ ] 40. snippets aren't working in the friendly-snippets plugin

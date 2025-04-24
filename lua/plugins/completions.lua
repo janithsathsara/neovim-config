@@ -1,20 +1,20 @@
-local LuaSnip_version = "v2.2.0"
 return {
 	{
 		"saghen/blink.cmp",
+		version = "1.*",
 		-- optional: provides snippets for the snippet source
 		dependencies = {
 			"rafamadriz/friendly-snippets",
-			{ "L3MON4D3/LuaSnip", version = LuaSnip_version },
+			{ "L3MON4D3/LuaSnip", version = "v2.*" },
 		},
-		version = "v0.9.0",
-
 		---@module 'blink.cmp'
 		---@type blink.cmp.Config
 		opts = {
 			fuzzy = {
+				implementation = "lua",
 				prebuilt_binaries = {
-					force_version = "v0.8.2", -- This is important for downloading preebuilt libraries
+					download = true,
+					force_version = "v1.0.0",
 				},
 			},
 			keymap = {
@@ -31,28 +31,28 @@ return {
 				["<C-p>"] = { "snippet_backward", "fallback" },
 			},
 
-			snippets = {
-				expand = function(args)
-					require("luasnip").lsp_expand(args)
-				end,
-				active = function(filter)
-					if filter and filter.direction then
-						return require("luasnip").jumpable(filter.direction)
-					end
-					return require("luasnip").in_snippet()
-				end,
-				jump = function(direction)
-					require("luasnip").jump(direction)
-				end,
-			},
-
 			appearance = {
 				use_nvim_cmp_as_default = true,
 				nerd_font_variant = "mono",
 			},
-
+			-- snippets = {
+			-- preset = "luasnip",
+			-- expand = function(args)
+			-- 	require("luasnip").lsp_expand(args.body)
+			-- end,
+			-- active = function(filter)
+			-- 	if filter and filter.direction then
+			-- 		return require("luasnip").jumpable(filter.direction)
+			-- 	end
+			-- 	return require("luasnip").in_snippet()
+			-- end,
+			-- jump = function(direction)
+			-- 	require("luasnip").jump(direction)
+			-- end,
+			-- },
+			snippets = { preset = "luasnip" },
 			sources = {
-				default = { "lsp", "path", "luasnip", "buffer", "snippets" },
+				default = { "lsp", "snippets", "path", "buffer" },
 				per_filetype = {
 					sql = { "snippets", "dadbod", "buffer" },
 				},
@@ -63,13 +63,6 @@ return {
 						enabled = true,
 						module = "blink.cmp.sources.lsp",
 						score_offset = 100, -- the higher the number, the higher the priority
-					},
-					luasnip = {
-						name = "luasnip",
-						enabled = true,
-						async = true,
-						module = "blink.cmp.sources.luasnip",
-						score_offset = 90, -- the higher the number, the higher the priority
 					},
 					path = {
 						name = "Path",
@@ -90,9 +83,12 @@ return {
 						score_offset = 45,
 					},
 					snippets = {
-						name = "Snippets",
+						name = "snippets",
 						module = "blink.cmp.sources.snippets",
-						score_offset = 89,
+						enabled = true,
+						max_items = 8,
+						min_keyword_length = 2,
+						score_offset = 95,
 					},
 					dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
 				},

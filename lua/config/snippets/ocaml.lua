@@ -1,4 +1,4 @@
-require("luasnip.session.snippet_collection").clear_snippets("ocaml")
+-- require("luasnip.session.snippet_collection").clear_snippets("ocaml")
 
 local ls = require("luasnip")
 
