@@ -9,7 +9,7 @@ return {
 		},
 		dashboard = { enable = true },
 		bigfile = { enable = true },
-		-- indent = { enable = true, only_current = true },
+		indent = { enable = true, only_current = true },
 		git = { enable = true },
 		lazygit = { enable = true },
 	},
