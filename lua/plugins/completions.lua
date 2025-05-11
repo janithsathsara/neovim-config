@@ -102,6 +102,16 @@ return {
 				documentation = { auto_show = true },
 			},
 			signature = { enabled = true },
+
+			cmdline = {
+				enabled = true,
+				completion = {
+					menu = {
+						auto_show = true,
+					},
+				},
+				keymap = { preset = "inherit" },
+			},
 		},
 		opts_extend = { "sources.default" },
 	},

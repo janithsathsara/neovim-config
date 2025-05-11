@@ -15,7 +15,7 @@ return {
 				json = { "prettierd" },
 				jsonc = { "prettierd" },
 				markdown = { "prettierd" },
-				html = { "htmlbeautifier" },
+				html = { "prettierd" },
 				bash = { "beautysh" },
 				rust = { "rustfmt" },
 				toml = { "taplo" },

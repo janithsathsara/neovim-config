@@ -29,6 +29,7 @@ vim.opt.showtabline = 0
 vim.opt.foldcolumn = "0"
 vim.opt.cursorcolumn = false
 
+
 -- vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
@@ -45,7 +46,7 @@ vim.opt.cmdheight = 1
 vim.api.nvim_create_autocmd("TextYankPost", {
 	pattern = "*",
 	callback = function()
-		vim.highlight.on_yank({ higroup = "IncSearch", timeout = 200 })
+		vim.hl.on_yank({ higroup = "IncSearch", timeout = 200 })
 	end,
 })
 

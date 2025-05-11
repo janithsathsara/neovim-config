@@ -15,7 +15,6 @@ return {
 		local mason_lspconfig = require("mason-lspconfig")
 
 		-- import blink.cmp plugin
-		local capabilities = require("blink.cmp").get_lsp_capabilities()
 
 		local keymap = vim.keymap -- for conciseness
 
@@ -58,22 +57,24 @@ return {
 		-- Change the Diagnostic symbols in the sign column (gutter)
 		-- (not in youtube nvim video)
 		local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
-		for type, icon in pairs(signs) do
-			local hl = "DiagnosticSign" .. type
-			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-		end
-
-		mason_lspconfig.setup_handlers({
+		vim.diagnostic.config({
+			signs = {
+				text = {
+					[vim.diagnostic.severity.ERROR] = signs.Error,
+					[vim.diagnostic.severity.WARN] = signs.Warn,
+					[vim.diagnostic.severity.HINT] = signs.Hint,
+					[vim.diagnostic.severity.INFO] = signs.Info,
+				},
+			},
+		})
+		mason_lspconfig.setup({
 			-- default handler for installed servers
 			function(server_name)
-				lspconfig[server_name].setup({
-					capabilities = capabilities,
-				})
+				lspconfig[server_name].setup({})
 			end,
 			["lua_ls"] = function()
 				-- configure lua server (with special settings)
 				lspconfig["lua_ls"].setup({
-					capabilities = capabilities,
 					settings = {
 						Lua = {
 							-- make the language server recognize "vim" global
@@ -89,7 +90,6 @@ return {
 			end,
 			["pylsp"] = function()
 				lspconfig["pylsp"].setup({
-					capabilities = capabilities,
 					settings = {
 						pylsp = {
 							plugins = {
@@ -103,6 +103,11 @@ return {
 							},
 						},
 					},
+				})
+			end,
+			["angularls"] = function()
+				lspconfig["angularls"].setup({
+					root_dir = require("lspconfig.util").root_pattern("angular.json", "project.json", ".git"),
 				})
 			end,
 		})
