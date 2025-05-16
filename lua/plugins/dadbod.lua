@@ -27,5 +27,6 @@ return {
 }
 
 -- postgres://<username>:<password>@localhost/<database>
+-- postgresql://postgres@localhost:5432/test
 -- Toggle dbui and press A. Then add the given link
 -- saving will run the query

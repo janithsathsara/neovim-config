@@ -6,6 +6,9 @@ return {
 
 		conform.setup({
 			formatters_by_ft = {
+				cs = { "clang_format" },
+				c = { "clang-format" },
+				cpp = { "clang-format" },
 				lua = { "stylua" },
 				svelte = { "prettierd" },
 				javascript = { "prettierd" },
@@ -31,6 +34,12 @@ return {
 				rustfmt = {
 					inherit = true,
 					prepend_args = { "--config", "max_width=150" },
+				},
+				clang_format = {
+					prepend_args = {
+						"--style",
+						"{IndentWidth: 4, TabWidth: 4, UseTab: Never}",
+					},
 				},
 			},
 		})

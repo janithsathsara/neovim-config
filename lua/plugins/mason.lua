@@ -49,6 +49,7 @@ return {
 					"prettierd",
 					"eslint_d",
 					"ruff",
+					"clang-format",
 				},
 			})
 		end,
