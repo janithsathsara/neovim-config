@@ -1,6 +1,5 @@
 return {
 	{
-
 		"mason-org/mason.nvim",
 		dependencies = {
 			"mason-org/mason-lspconfig.nvim",
@@ -36,11 +35,11 @@ return {
 					"html",
 					"cssls",
 					"lua_ls",
-					"pylsp",
 					"marksman",
 					"taplo",
 					"angularls",
 					"harper_ls",
+					"pyright",
 				},
 			})
 
