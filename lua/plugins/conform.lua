@@ -41,6 +41,14 @@ return {
 						"{IndentWidth: 4, TabWidth: 4, UseTab: Never}",
 					},
 				},
+				-- prettierd = {
+				-- 	prepend_args = {
+				-- 		"--tab-width",
+				-- 		"4",
+				-- 		"--print-width",
+				-- 		"100",
+				-- 	},
+				-- },
 			},
 		})
 		vim.api.nvim_create_autocmd("BufWritePre", {
