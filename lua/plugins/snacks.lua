@@ -208,7 +208,7 @@ return {
 			end,
 			desc = "Projects",
 		},
-		-- LSP JJJJJJJj
+		-- LSP
 		{
 			"gd",
 			function()

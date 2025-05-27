@@ -40,6 +40,7 @@ return {
 					"marksman",
 					"taplo",
 					"angularls",
+					"harper_ls",
 				},
 			})
 

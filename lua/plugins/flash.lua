@@ -1,14 +1,13 @@
 return {
-    "folke/flash.nvim",
-    event = "VeryLazy",
-    ---@type Flash.Config
-    opts = {
-        modes = {
-            char = {
-                enabled = false, -- disable f, F, t, T motions
-            },
-        },
-    },
+	"folke/flash.nvim",
+	event = "VeryLazy",
+	opts = {
+		modes = {
+			char = {
+				enabled = false, -- disable f, F, t, T motions
+			},
+		},
+	},
     -- stylua: ignore
     keys = {
         -- Basic jump anywhere

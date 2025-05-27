@@ -8,7 +8,6 @@ return {
 			{ "L3MON4D3/LuaSnip", version = "v2.*" },
 		},
 		---@module 'blink.cmp'
-		---@type blink.cmp.Config
 		opts = {
 			fuzzy = {
 				implementation = "lua",

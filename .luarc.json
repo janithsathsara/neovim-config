@@ -6,6 +6,7 @@
     ],
     "diagnostics.disable": [
         "missing-fields",
-        "assign-type-mismatch"
+        "assign-type-mismatch",
+        "undefined-global"
     ]
 }
