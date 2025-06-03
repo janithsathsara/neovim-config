@@ -1,6 +1,9 @@
 return {
 	"stevearc/conform.nvim",
-	event = { "BufReadPre", "BufNewFile" },
+	event = {
+		"BufReadPre",
+		"BufNewFile",
+	},
 	config = function()
 		local conform = require("conform")
 
@@ -10,7 +13,7 @@ return {
 				cs = { "clang_format" },
 				c = { "clang-format" },
 				cpp = { "clang-format" },
-				go = { "gofmt" },
+				go = { "goimports" },
 				html = { "prettierd" },
 				javascript = { "prettierd" },
 				javascriptreact = { "prettierd" },
@@ -18,7 +21,11 @@ return {
 				jsonc = { "prettierd" },
 				lua = { "stylua" },
 				markdown = { "prettierd" },
-				python = { "ruff" },
+				python = {
+					"ruff_fix",
+					"ruff_format",
+					"ruff_organize_imports",
+				},
 				rust = { "rustfmt" },
 				svelte = { "prettierd" },
 				sh = { "shellcheck" },
@@ -30,11 +37,17 @@ return {
 			formatters = {
 				stylua = {
 					inherit = true,
-					prepend_args = { "--column-width", "200" },
+					prepend_args = {
+						"--column-width",
+						"200",
+					},
 				},
 				rustfmt = {
 					inherit = true,
-					prepend_args = { "--config", "max_width=150" },
+					prepend_args = {
+						"--config",
+						"max_width=150",
+					},
 				},
 				clang_format = {
 					prepend_args = {
@@ -55,15 +68,27 @@ return {
 		vim.api.nvim_create_autocmd("BufWritePre", {
 			pattern = "*",
 			callback = function(args)
-				conform.format({ bufnr = args.buf })
+				conform.format({
+					bufnr = args.buf,
+				})
 			end,
 		})
-		vim.keymap.set({ "n", "v" }, "<leader>lf", function()
-			conform.format({
-				lsp_fallback = true,
-				async = false,
-				timeout_ms = 1000,
-			})
-		end, { desc = "Format file or range (in visual mode)" })
+		vim.keymap.set(
+			{
+				"n",
+				"v",
+			},
+			"<leader>lf",
+			function()
+				conform.format({
+					lsp_fallback = true,
+					async = false,
+					timeout_ms = 1000,
+				})
+			end,
+			{
+				desc = "Format file or range (in visual mode)",
+			}
+		)
 	end,
 }

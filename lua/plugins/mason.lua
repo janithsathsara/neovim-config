@@ -34,6 +34,7 @@ return {
 					"ts_ls",
 					"html",
 					"cssls",
+					"gopls",
 					"lua_ls",
 					"marksman",
 					"taplo",
@@ -48,8 +49,15 @@ return {
 					"stylua",
 					"prettierd",
 					"eslint_d",
+					"goimports",
 					"ruff",
 					"clang-format",
+					"js-debug-adapter",
+					-- "js", -- JavaScript/TypeScript
+					"debugpy",
+					-- "python", -- debugpy
+					"codelldb", -- Rust debugging
+					"delve", -- Go debuggin
 				},
 			})
 		end,
