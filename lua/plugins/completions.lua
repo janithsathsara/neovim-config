@@ -13,7 +13,7 @@ return {
 				implementation = "lua",
 				prebuilt_binaries = {
 					download = true,
-					force_version = "v1.0.0",
+					-- force_version = "v1.0.0",
 				},
 			},
 			keymap = {
@@ -34,21 +34,6 @@ return {
 				use_nvim_cmp_as_default = true,
 				nerd_font_variant = "mono",
 			},
-			-- snippets = {
-			-- preset = "luasnip",
-			-- expand = function(args)
-			-- 	require("luasnip").lsp_expand(args.body)
-			-- end,
-			-- active = function(filter)
-			-- 	if filter and filter.direction then
-			-- 		return require("luasnip").jumpable(filter.direction)
-			-- 	end
-			-- 	return require("luasnip").in_snippet()
-			-- end,
-			-- jump = function(direction)
-			-- 	require("luasnip").jump(direction)
-			-- end,
-			-- },
 			snippets = { preset = "luasnip" },
 			sources = {
 				default = { "lsp", "snippets", "path", "buffer" },
@@ -100,7 +85,12 @@ return {
 				},
 				documentation = { auto_show = true },
 			},
-			signature = { enabled = true },
+			signature = {
+				enabled = true,
+				window = {
+					show_documentation = true,
+				},
+			},
 
 			cmdline = {
 				enabled = true,
@@ -115,6 +105,7 @@ return {
 		opts_extend = { "sources.default" },
 	},
 	{
+		--I can add friendly snippets directly into blink. That is a bit hard, so luasnip can add them more easily as below
 		"L3MON4D3/LuaSnip",
 		version = "v2.*",
 		dependencies = {
@@ -122,6 +113,15 @@ return {
 		},
 		config = function()
 			require("luasnip.loaders.from_vscode").lazy_load()
+
+			-- Extend JavaScript files to also use Angular snippets
+			require("luasnip").filetype_extend("jsonc", { "angular" })
+
+			-- You might also want to extend TypeScript files
+			require("luasnip").filetype_extend("typescript", { "angular" })
+
+			-- And HTML files for Angular templates
+			require("luasnip").filetype_extend("html", { "angular" })
 		end,
 	},
 }
