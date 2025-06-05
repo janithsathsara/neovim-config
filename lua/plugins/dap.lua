@@ -1,7 +1,8 @@
 return {
 	{
 		"mfussenegger/nvim-dap",
-		event = "VeryLazy",
+		lazy = true,
+		cmd = { "DapToggleBreakpoint" },
 		dependencies = {
 			"leoluz/nvim-dap-go",
 			"rcarriga/nvim-dap-ui",
@@ -19,10 +20,6 @@ return {
 					path = "C:\\Users\\BlackPearl\\AppData\\Local\\nvim-data\\mason\\packages\\delve\\dlv.exe",
 				},
 			})
-			-- Enable python dap
-			require("dap-python").setup("C:\\Users\\BlackPearl\\AppData\\Local\\nvim-data\\mason\\packages\\debugpy\\venv\\Scripts\\python.exe")
-			-- Enable debugging of tests
-			require("dap-python").test_runner = "pytest"
 
 			-- DAP UI setup
 			require("dapui").setup({
@@ -47,33 +44,6 @@ return {
 					},
 				},
 			})
-
-			-- -- Virtual Text setup (FIXED: moved after dap setup and enhanced configuration)
-			-- require("nvim-dap-virtual-text").setup({
-			-- 	enabled = true,
-			-- 	enabled_commands = true,
-			-- 	highlight_changed_variables = true,
-			-- 	highlight_new_as_changed = false,
-			-- 	show_stop_reason = true,
-			-- 	commented = false,
-			-- 	only_first_definition = true,
-			-- 	all_references = false,
-			-- 	clear_on_continue = false,
-			-- 	-- Display virtual text for all stack frames not only current frame
-			-- 	display_callback = function(variable, buf, stackframe, node, options)
-			-- 		if options.virt_text_pos == "inline" then
-			-- 			return " = " .. variable.value
-			-- 		else
-			-- 			return variable.name .. " = " .. variable.value
-			-- 		end
-			-- 	end,
-			-- 	-- Position of virtual text, see `:help nvim_buf_set_extmark()`, default tries to inline the virtual text
-			-- 	virt_text_pos = vim.fn.has("nvim-0.10") == 1 and "inline" or "eol",
-			-- 	-- Experimental features:
-			-- 	all_frames = false, -- show virtual text for all stack frames not only current. Only works for debugpy on my machine.
-			-- 	virt_lines = false, -- show virtual lines instead of virtual text (will flicker!)
-			-- 	virt_text_win_col = nil, -- position the virtual text at a fixed window column (starting from the first text column) ,
-			-- })
 
 			--Setup nvim dap
 			local dap = require("dap")
@@ -108,38 +78,6 @@ return {
 			vim.fn.sign_define("DapBreakpointRejected", { text = "", texthl = "DiagnosticWarn", linehl = "", numhl = "" })
 			vim.fn.sign_define("DapStopped", { text = "➜", texthl = "DiagnosticInfo", linehl = "Visual", numhl = "" })
 
-			-- Keymappings
-			vim.keymap.set("n", "<F5>", function()
-				require("dap").continue()
-			end, { desc = "continue" })
-			vim.keymap.set("n", "<F6>", function()
-				require("dap").step_over()
-			end, { desc = "step over" })
-			vim.keymap.set("n", "<F7>", function()
-				require("dap").step_into()
-			end, { desc = "step into" })
-			vim.keymap.set("n", "<F8>", function()
-				require("dap").step_out()
-			end, { desc = "step out" })
-			vim.keymap.set("n", "<Leader>db", function()
-				require("dap").toggle_breakpoint()
-			end, { desc = "toggle brakpoint" })
-			vim.keymap.set("n", "<Leader>dB", function()
-				require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: "))
-			end, { desc = "Breakpoint condition" })
-			vim.keymap.set("n", "<Leader>dr", function()
-				require("dap").repl.open()
-			end, { desc = "repl open" })
-			vim.keymap.set("n", "<Leader>dl", function()
-				require("dap").run_last()
-			end, { desc = "run last" })
-			vim.keymap.set("n", "<Leader>du", function()
-				require("dapui").toggle()
-			end, { desc = "dapui toggle" })
-			vim.keymap.set("n", "<Leader>dv", function()
-				require("nvim-dap-virtual-text").toggle()
-			end, { desc = "DAP: Toggle Virtual Text" })
-
 			-- Automatically open/close DAP UI
 			local dapui = require("dapui")
 			dap.listeners.after.event_initialized["dapui_config"] = function()
@@ -167,14 +105,107 @@ return {
 				vim.cmd("DapVirtualTextDisable")
 			end
 		end,
+		keys = {
+			-- Keymappings
+			{
+				"<F5>",
+				function()
+					require("dap").continue()
+				end,
+				"n",
+				desc = "continue",
+			},
+			{
+				"<F6>",
+				function()
+					require("dap").step_over()
+				end,
+				"n",
+				desc = "step over",
+			},
+			{
+				"<F7>",
+				function()
+					require("dap").step_into()
+				end,
+				"n",
+				desc = "step into",
+			},
+			{
+				"<F8>",
+				function()
+					require("dap").step_out()
+				end,
+				"n",
+				desc = "step out",
+			},
+			{
+				"<Leader>db",
+				function()
+					require("dap").toggle_breakpoint()
+				end,
+				"n",
+				desc = "toggle brakpoint",
+			},
+			{
+				"<Leader>dB",
+				function()
+					require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: "))
+				end,
+				"n",
+				desc = "Breakpoint condition",
+			},
+			{
+				"<Leader>dr",
+				function()
+					require("dap").repl.open()
+				end,
+				"n",
+				desc = "repl open",
+			},
+			{
+				"<Leader>dl",
+				function()
+					require("dap").run_last()
+				end,
+				"n",
+				desc = "run last",
+			},
+			{
+				"<Leader>du",
+				function()
+					require("dapui").toggle()
+				end,
+				"n",
+				desc = "dapui toggle",
+			},
+			{
+				"<Leader>dv",
+				function()
+					require("nvim-dap-virtual-text").toggle()
+				end,
+				"n",
+				desc = "DAP: Toggle Virtual Text",
+			},
+		},
+	},
+	{
+		"mfussenegger/nvim-dap-python",
+		ft = "python", -- Only load for Python files
+		dependencies = { "mfussenegger/nvim-dap" },
+		config = function()
+			require("dap-python").setup("C:\\Users\\BlackPearl\\AppData\\Local\\nvim-data\\mason\\packages\\debugpy\\venv\\Scripts\\python.exe")
+			require("dap-python").test_runner = "pytest"
+		end,
 	},
 	{
 		"theHamsta/nvim-dap-virtual-text",
+		lazy = true,
 		dependencies = { "mfussenegger/nvim-dap" },
 		config = function()
 			require("nvim-dap-virtual-text").setup({
-				enabled = true, -- enable by default
-				enabled_commands = true, -- adds DAPVirtualTextEnable, etc.
+				enabled = true,
+				enabled_commands = true,
 				highlight_changed_variables = true,
 				show_stop_reason = true,
 			})

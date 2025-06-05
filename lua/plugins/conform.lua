@@ -1,5 +1,6 @@
 return {
 	"stevearc/conform.nvim",
+    lazy = true,
 	event = {
 		"BufReadPre",
 		"BufNewFile",
@@ -73,22 +74,23 @@ return {
 				})
 			end,
 		})
-		vim.keymap.set(
-			{
-				"n",
-				"v",
-			},
+	end,
+	keys = {
+		{
 			"<leader>lf",
 			function()
-				conform.format({
+				require("conform").format({
 					lsp_fallback = true,
 					async = false,
 					timeout_ms = 1000,
 				})
 			end,
 			{
-				desc = "Format file or range (in visual mode)",
-			}
-		)
-	end,
+				"n",
+				"v",
+			},
+
+			desc = "Format file or range (in visual mode)",
+		},
+	},
 }

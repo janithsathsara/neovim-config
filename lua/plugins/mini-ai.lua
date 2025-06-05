@@ -1,11 +1,13 @@
 return {
-    {
-        "echasnovski/mini.ai",
-        version = "*",
-        config = function()
-            require("mini.ai").setup()
-        end,
-    },
+	{
+		"echasnovski/mini.ai",
+		lazy = true,
+		event = "BufEnter",
+		version = "*",
+		config = function()
+			require("mini.ai").setup()
+		end,
+	},
 }
 
 -- |Key|     Name      |   Example line   |   a    |   i    |   2a   |   2i   |
@@ -42,4 +44,3 @@ return {
 -- |   | punctuation,  | (example for _)  |        |        |        |        |
 -- |   | or whitespace)|                  |        |        |        |        |
 -- |---|---------------|-1234567890123456-|--------|--------|--------|--------|
-

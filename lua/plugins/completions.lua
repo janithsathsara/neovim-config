@@ -10,10 +10,10 @@ return {
 		---@module 'blink.cmp'
 		opts = {
 			fuzzy = {
-				implementation = "lua",
+				implementation = "prefer_rust_with_warning",
 				prebuilt_binaries = {
 					download = true,
-					-- force_version = "v1.0.0",
+					force_version = "v1.3.1",
 				},
 			},
 			keymap = {

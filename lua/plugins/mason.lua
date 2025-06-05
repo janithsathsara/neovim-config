@@ -28,6 +28,7 @@ return {
 			mason_lspconfig.setup({
 				-- list of servers for mason to install
 				ensure_installed = {
+					"clangd",
 					"rust_analyzer",
 					"emmet_language_server",
 					"jsonls",
@@ -53,9 +54,7 @@ return {
 					"ruff",
 					"clang-format",
 					"js-debug-adapter",
-					-- "js", -- JavaScript/TypeScript
 					"debugpy",
-					-- "python", -- debugpy
 					"codelldb", -- Rust debugging
 					"delve", -- Go debuggin
 				},

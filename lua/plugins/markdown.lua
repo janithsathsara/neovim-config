@@ -1,15 +1,16 @@
 return {
 	"MeanderingProgrammer/render-markdown.nvim",
-	lazy = false,
+	lazy = true,
+	ft = { "markdown" },
 	priority = 100,
 	opts = {
-        treesitter = {
-            enabled = true,
-            highlight = true,
-        },
+		treesitter = {
+			enabled = true,
+			highlight = true,
+		},
 		latex = { enabled = false },
 	},
-    config = function()
+	config = function()
 		require("nvim-treesitter.configs").setup({
 			highlight = {
 				enable = true,
