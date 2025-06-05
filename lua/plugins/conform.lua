@@ -1,6 +1,6 @@
 return {
 	"stevearc/conform.nvim",
-    lazy = true,
+	lazy = true,
 	event = {
 		"BufReadPre",
 		"BufNewFile",
@@ -21,7 +21,7 @@ return {
 				json = { "prettierd" },
 				jsonc = { "prettierd" },
 				lua = { "stylua" },
-				markdown = { "prettierd" },
+				markdown = { "mdformat" },
 				python = {
 					"ruff_fix",
 					"ruff_format",
@@ -40,7 +40,7 @@ return {
 					inherit = true,
 					prepend_args = {
 						"--column-width",
-						"200",
+						"150",
 					},
 				},
 				rustfmt = {
@@ -56,14 +56,16 @@ return {
 						"{IndentWidth: 4, TabWidth: 4, UseTab: Never}",
 					},
 				},
-				-- prettierd = {
-				-- 	prepend_args = {
-				-- 		"--tab-width",
-				-- 		"4",
-				-- 		"--print-width",
-				-- 		"100",
-				-- 	},
-				-- },
+				prettierd = {
+					prepend_args = {
+						"--tab-width=4", -- Set tab width to 2 spaces
+					},
+				},
+				mdformat = {
+					command = "mdformat",
+					args = { "--wrap", "148", "-" },
+					stdin = true,
+				},
 			},
 		})
 		vim.api.nvim_create_autocmd("BufWritePre", {
