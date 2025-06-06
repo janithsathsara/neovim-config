@@ -286,7 +286,10 @@ return {
 	},
 	{
 		"lukas-reineke/indent-blankline.nvim",
-		event = "BufEnter",
+		event = {
+			"BufReadPre",
+			"BufNewFile",
+		},
 		main = "ibl",
 		---@module "ibl"
 		config = function()

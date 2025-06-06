@@ -58,6 +58,7 @@ return {
 		-- (not in youtube nvim video)
 		local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
 		vim.diagnostic.config({
+			virtual_text = true,
 			signs = {
 				text = {
 					[vim.diagnostic.severity.ERROR] = signs.Error,
@@ -88,23 +89,23 @@ return {
 					},
 				})
 			end,
-			["pylsp"] = function()
-				lspconfig["pylsp"].setup({
-					settings = {
-						pylsp = {
-							plugins = {
-								pylsp_black = { enabled = false },
-								pylsp_mypy = { enabled = false },
-								pylsp_isort = { enabled = false },
-								pyflakes = { enabled = false },
-								autopep8 = { enabled = false },
-								pycodestyle = { enabled = false },
-								yapf = { enabled = false },
-							},
-						},
-					},
-				})
-			end,
+			-- ["pylsp"] = function()
+			-- 	lspconfig["pylsp"].setup({
+			-- 		settings = {
+			-- 			pylsp = {
+			-- 				plugins = {
+			-- 					pylsp_black = { enabled = false },
+			-- 					pylsp_mypy = { enabled = false },
+			-- 					pylsp_isort = { enabled = false },
+			-- 					pyflakes = { enabled = false },
+			-- 					autopep8 = { enabled = false },
+			-- 					pycodestyle = { enabled = false },
+			-- 					yapf = { enabled = false },
+			-- 				},
+			-- 			},
+			-- 		},
+			-- 	})
+			-- end,
 			["angularls"] = function()
 				lspconfig["angularls"].setup({
 					root_dir = require("lspconfig.util").root_pattern("angular.json", "project.json", ".git"),

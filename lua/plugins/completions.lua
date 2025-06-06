@@ -1,6 +1,11 @@
 return {
 	{
 		"saghen/blink.cmp",
+		lazy = true,
+		event = {
+			"BufReadPre",
+			"BufNewFile",
+		},
 		version = "1.*",
 		-- optional: provides snippets for the snippet source
 		dependencies = {

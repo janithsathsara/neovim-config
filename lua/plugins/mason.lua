@@ -9,7 +9,7 @@ return {
 			-- import mason
 			local mason = require("mason")
 
-			-- import mason-lspconfig
+			-- import mason LSP config
 			local mason_lspconfig = require("mason-lspconfig")
 
 			local mason_tool_installer = require("mason-tool-installer")
@@ -26,7 +26,7 @@ return {
 			})
 
 			mason_lspconfig.setup({
-				-- list of servers for mason to install
+				-- List of servers for mason to install
 				ensure_installed = {
 					"clangd",
 					"rust_analyzer",
@@ -47,16 +47,17 @@ return {
 
 			mason_tool_installer.setup({
 				ensure_installed = {
+					-- "vale",
 					"stylua",
 					"prettierd",
-					"eslint_d",
+					-- { "eslint_d", version = "13.1.2" },
 					"goimports",
 					"ruff",
 					"clang-format",
 					"js-debug-adapter",
 					"debugpy",
 					"codelldb", -- Rust debugging
-					"delve", -- Go debuggin
+					"delve", -- Go debugging
 				},
 			})
 		end,

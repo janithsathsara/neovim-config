@@ -9,7 +9,7 @@ local fmt = require("luasnip.extras.fmt").fmt
 local rep = require("luasnip.extras").rep
 
 ls.add_snippets("cs", {
-	s("cproperty", fmt("public {} {} {{get; set;}}", { i(1, "Type"), i(2) })),
+	s("cprop", fmt("public {} {} {{get; set;}}", { i(1, "Type"), i(2) })),
 	s(
 		"cclass",
 		fmt(
@@ -17,7 +17,6 @@ ls.add_snippets("cs", {
                 public {}() {{
                     {}
                 }}
-    
                 {}
             }}]],
 			{
