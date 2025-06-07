@@ -7,7 +7,7 @@ return {
 			"BufNewFile",
 		},
 		version = "1.*",
-		-- optional: provides snippets for the snippet source
+		-- Optional: provides snippets for the snippet source
 		dependencies = {
 			"rafamadriz/friendly-snippets",
 			{ "L3MON4D3/LuaSnip", version = "v2.*" },
@@ -113,7 +113,7 @@ return {
 		opts_extend = { "sources.default" },
 	},
 	{
-		--I can add friendly snippets directly into blink. That is a bit hard, so luasnip can add them more easily as below
+		--I can add friendly snippets directly into blink. That is a bit hard, so Luasnip can add them more easily as below
 		"L3MON4D3/LuaSnip",
 		version = "v2.*",
 		dependencies = {
