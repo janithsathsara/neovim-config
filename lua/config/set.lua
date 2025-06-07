@@ -17,6 +17,7 @@ vim.opt.undofile = true
 
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
+vim.opt.winborder = "single"
 
 vim.opt.termguicolors = true
 
@@ -28,7 +29,6 @@ vim.opt.ignorecase = true
 vim.opt.showtabline = 0
 vim.opt.foldcolumn = "0"
 vim.opt.cursorcolumn = false
-
 
 -- vim.opt.isfname:append("@-@")
 

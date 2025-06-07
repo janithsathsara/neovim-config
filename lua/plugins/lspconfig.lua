@@ -48,7 +48,12 @@ return {
 
 				keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic" }) -- jump to next diagnostic in buffer
 
-				keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show documentation for what is under cursor" }) -- show documentation for what is under cursor
+				keymap.set(
+					"n",
+					"K",
+					'<cmd>lua vim.lsp.buf.hover({ border = "rounded" })<cr>',
+					{ desc = "Show documentation for what is under cursor" }
+				) -- show documentation for what is under cursor
 
 				keymap.set("n", "<leader>rs", ":LspRestart<CR>", { desc = "Restart LSP" }) -- mapping to restart lsp if necessary
 			end,

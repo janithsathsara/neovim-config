@@ -87,8 +87,11 @@ return {
 				keyword = { range = "prefix" },
 				menu = {
 					auto_show = true,
+					max_height = 20,
+					border = "rounded",
+					draw = { gap = 2, columns = { { "label", "label_description", gap = 2 }, { "kind_icon", "source_name", gap = 2 } } },
 				},
-				documentation = { auto_show = true },
+				documentation = { auto_show = true, window = { border = "rounded" } },
 			},
 			signature = {
 				enabled = true,
