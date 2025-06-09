@@ -28,20 +28,21 @@ return {
 			mason_lspconfig.setup({
 				-- List of servers for mason to install
 				ensure_installed = {
+					"angularls",
 					"clangd",
-					"rust_analyzer",
-					"emmet_language_server",
-					"jsonls",
-					"ts_ls",
-					"html",
 					"cssls",
+					"emmet_language_server",
 					"gopls",
+					"harper_ls",
+					"html",
+					"jsonls",
 					"lua_ls",
 					"marksman",
-					"taplo",
-					"angularls",
-					"harper_ls",
+					"powershell_es",
 					"pyright",
+					"rust_analyzer",
+					"taplo",
+					"ts_ls",
 				},
 			})
 
