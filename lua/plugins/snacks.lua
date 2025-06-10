@@ -51,13 +51,13 @@ return {
 				desc = "Recent",
 			},
 			-- git
-			{
-				"<leader>gc",
-				function()
-					Snacks.picker.git_log()
-				end,
-				desc = "Git Log",
-			},
+			-- {
+			-- 	"<leader>gc",
+			-- 	function()
+			-- 		Snacks.picker.git_log()
+			-- 	end,
+			-- 	desc = "Git Log",
+			-- },
 			{
 				"<leader>gs",
 				function()
@@ -103,13 +103,13 @@ return {
 				end,
 				desc = "Registers",
 			},
-			{
-				"<leader>sa",
-				function()
-					Snacks.picker.autocmds()
-				end,
-				desc = "Autocmds",
-			},
+			-- {
+			-- 	"<leader>sa",
+			-- 	function()
+			-- 		Snacks.picker.autocmds()
+			-- 	end,
+			-- 	desc = "Autocmds",
+			-- },
 			{
 				"<leader>sc",
 				function()
@@ -187,12 +187,20 @@ return {
 				end,
 				desc = "Resume",
 			},
+			-- Quickfix list
 			{
-				"<leader>sq",
+				"<leader>sa",
 				function()
 					Snacks.picker.qflist()
 				end,
 				desc = "Quickfix List",
+			},
+			{
+				"<C-q>",
+				function()
+					Snacks.picker.actions.qflist(picker)
+				end,
+				desc = "Send to quickfix list",
 			},
 			{
 				"<leader>uC",
@@ -261,20 +269,20 @@ return {
 				desc = "Get Root",
 			},
 			-- LazyGit
-			{
-				"<leader>gg",
-				function()
-					Snacks.lazygit()
-				end,
-				desc = "Lazygit",
-			},
-			{
-				"<leader>gl",
-				function()
-					Snacks.lazygit.log()
-				end,
-				desc = "Lazygit Log",
-			},
+			-- {
+			-- 	"<leader>gg",
+			-- 	function()
+			-- 		Snacks.lazygit()
+			-- 	end,
+			-- 	desc = "Lazygit",
+			-- },
+			-- {
+			-- 	"<leader>gl",
+			-- 	function()
+			-- 		Snacks.lazygit.log()
+			-- 	end,
+			-- 	desc = "Lazygit Log",
+			-- },
 			{
 				"<leader>gf",
 				function()

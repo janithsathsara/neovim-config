@@ -29,14 +29,17 @@ vim.keymap.set("n", "N", "Nzzzv", { desc = "something else" })
 vim.keymap.set("n", "<leader>lg", vim.lsp.buf.format, { desc = "LSP format" })
 
 --close all buffers remap
-vim.keymap.set(
-	"n",
-	"<leader>C",
-	"<Cmd>bufdo bdelete<CR><Cmd>lua Snacks.dashboard()<CR>",
-	{ desc = "close all buffers" }
-)
+vim.keymap.set("n", "<leader>C", "<Cmd>bufdo bdelete<CR><Cmd>lua Snacks.dashboard()<CR>", { desc = "close all buffers" })
+
 --Close current Buffer remap and go to header file
 vim.keymap.set("n", "<leader>c", "<Cmd>bdelete<CR>", { desc = "close current buffer" })
+
+-- Quickfix list
+
+vim.keymap.set("n", "<leader>sq", "<Cmd>copen<CR>", { desc = "Open quickfix list" })
+vim.keymap.set("n", "<leader>sn", "<Cmd>cnext<CR>", { desc = "Next quickfix item" })
+vim.keymap.set("n", "<leader>sp", "<Cmd>cprevious<CR>", { desc = "Previous quickfix item" })
+vim.keymap.set("n", "<leader>sz", "<Cmd>cwindow<CR>", { desc = "Open quickfix list in window" })
 
 --unmap keys
 -- vim.keymap.set('n', 'x', '<Nop>', { silent = true })
