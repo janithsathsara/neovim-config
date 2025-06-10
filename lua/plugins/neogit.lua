@@ -6,7 +6,6 @@ return {
 			"nvim-lua/plenary.nvim", -- required
 			"sindrets/diffview.nvim", -- optional - Diff integration
 
-			-- Only one of these is needed.
 			"folke/snacks.nvim", -- optional
 		},
 		config = function()
@@ -16,7 +15,15 @@ return {
 			{ "<leader>gg", "<Cmd>Neogit<CR>", "n", desc = "Neogit open" },
 			{
 				"<leader>gc",
-				"<Cmd>neogit commit<CR>",
+				function()
+					neogit.open({ "commit" })
+				end,
+				"n",
+				desc = "Neogit commit",
+			},
+			{
+				"<leader>gl",
+				"<CMD>Neogit log<CR>",
 				"n",
 				desc = "Neogit commit",
 			},

@@ -11,7 +11,6 @@ return {
 			dashboard = { enable = true },
 			bigfile = { enable = true },
 			git = { enable = true },
-			lazygit = { enable = true },
 		},
 		keys = {
 			-- find
@@ -202,6 +201,7 @@ return {
 				end,
 				desc = "Send to quickfix list",
 			},
+			--Quickfix list end
 			{
 				"<leader>uC",
 				function()
@@ -283,13 +283,13 @@ return {
 			-- 	end,
 			-- 	desc = "Lazygit Log",
 			-- },
-			{
-				"<leader>gf",
-				function()
-					Snacks.lazygit.log_file()
-				end,
-				desc = "Current File Log",
-			},
+			-- {
+			-- 	"<leader>gf",
+			-- 	function()
+			-- 		Snacks.lazygit.log_file()
+			-- 	end,
+			-- 	desc = "Current File Log",
+			-- },
 		},
 	},
 	{

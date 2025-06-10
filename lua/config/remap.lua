@@ -1,6 +1,5 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
--- vim.g.user_emmet_leader_key = "<C-z>"
 
 vim.keymap.set("n", "<leader>q", "<Cmd>q<CR>", { desc = "Exit" })
 vim.keymap.set("n", "<leader>w", "<Cmd>w<CR>", { desc = "Save" })
@@ -29,6 +28,7 @@ vim.keymap.set("n", "N", "Nzzzv", { desc = "something else" })
 vim.keymap.set("n", "<leader>lg", vim.lsp.buf.format, { desc = "LSP format" })
 
 --close all buffers remap
+--TODO: does not work correctly. The dashboard draws over everthing and when files are opened again, they cannot be seen.
 vim.keymap.set("n", "<leader>C", "<Cmd>bufdo bdelete<CR><Cmd>lua Snacks.dashboard()<CR>", { desc = "close all buffers" })
 
 --Close current Buffer remap and go to header file
