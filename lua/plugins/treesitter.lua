@@ -25,7 +25,9 @@ return {
 					"java", -- Java
 					"sql", -- SQL
 					"markdown_inline", -- Markdown
+					"powershell", -- PowerShell
 				},
+				highlight = { enable = true },
 			})
 		end,
 	},
