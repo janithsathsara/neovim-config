@@ -1,7 +1,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-vim.keymap.set("n", "<leader>q", "<Cmd>q<CR>", { desc = "Exit" })
+vim.keymap.set("n", "<leader>Q", "<Cmd>q<CR>", { desc = "Exit" })
 vim.keymap.set("n", "<leader>w", "<Cmd>w<CR>", { desc = "Save" })
 
 vim.keymap.set("n", "<leader>m", "GVgg")
