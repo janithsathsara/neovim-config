@@ -22,7 +22,8 @@ return {
 	{
 
 		"folke/tokyonight.nvim",
-		lazy = false,
+		lazy = true,
+		event = { "BufReadPre", "BufNewFile" },
 		priority = 1000,
 		name = "tokyonight",
 		opts = {},

@@ -21,14 +21,6 @@ return {
 
 				keymap.set("n", "<leader>ld", vim.diagnostic.open_float, { desc = "Show line diagnosis" })
 
-				keymap.set("n", "[d", function()
-					endvim.diagnostic.jump({ count = 1, float = true })
-				end, { desc = "Go to previous diagnostic" })
-
-				keymap.set("n", "]d", function()
-					vim.diagnostic.jump({ count = -1, float = true })
-				end, { desc = "Go to next diagnostic" })
-
 				keymap.set(
 					"n",
 					"K",
@@ -43,6 +35,7 @@ return {
 		-- Change the Diagnostic symbols in the sign column (gutter)
 		local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
 		vim.diagnostic.config({
+			jump = { float = true },
 			virtual_text = true,
 			signs = {
 				text = {

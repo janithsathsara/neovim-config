@@ -1,7 +1,9 @@
--- local ls = require("luasnip")
+local M = {}
 
-for _, ft_path in ipairs(vim.api.nvim_get_runtime_file("lua/config/snippets/*.lua", true)) do
-	loadfile(ft_path)()
+function M.load()
+	for _, ft_path in ipairs(vim.api.nvim_get_runtime_file("lua/config/snippets/*.lua", true)) do
+		loadfile(ft_path)()
+	end
 end
 
 -- In your main config file, replace the immediate require with:
@@ -16,3 +18,5 @@ end
 -- 		end
 -- 	end,
 -- })
+
+return M

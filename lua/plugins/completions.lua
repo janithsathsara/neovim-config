@@ -115,6 +115,11 @@ return {
 	{
 		--I can add friendly snippets directly into blink. That is a bit hard, so Luasnip can add them more easily as below
 		"L3MON4D3/LuaSnip",
+		lazy = true,
+		event = {
+			"BufReadPre",
+			"BufNewFile",
+		},
 		version = "v2.*",
 		dependencies = {
 			"rafamadriz/friendly-snippets",
@@ -130,6 +135,7 @@ return {
 
 			-- And HTML files for Angular templates
 			require("luasnip").filetype_extend("html", { "angular" })
+			require("config.snippets").load()
 		end,
 	},
 }
