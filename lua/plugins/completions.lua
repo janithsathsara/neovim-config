@@ -16,9 +16,17 @@ return {
 		opts = {
 			fuzzy = {
 				implementation = "prefer_rust_with_warning",
+				use_frecency = true,
+				use_proximity = true,
+				sorts = {
+					"exact",
+					"score",
+					"sort_text",
+				},
 				prebuilt_binaries = {
 					download = true,
-					force_version = "v1.3.1",
+					force_version = nil,
+					-- force_version = "v1.4.1",
 				},
 			},
 			keymap = {
@@ -51,7 +59,7 @@ return {
 						name = "lsp",
 						enabled = true,
 						module = "blink.cmp.sources.lsp",
-						score_offset = 100, -- the higher the number, the higher the priority
+						score_offset = 90, -- the higher the number, the higher the priority
 					},
 					path = {
 						name = "Path",

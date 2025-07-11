@@ -30,6 +30,10 @@ vim.opt.showtabline = 0
 vim.opt.foldcolumn = "0"
 vim.opt.cursorcolumn = false
 
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldlevel = 99
+
 vim.lsp.inlay_hint.enable(true)
 
 -- vim.opt.isfname:append("@-@")

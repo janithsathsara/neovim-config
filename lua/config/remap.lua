@@ -26,6 +26,13 @@ vim.keymap.set("n", "{", "{zz_", { desc = "move the cursor up half page" })
 vim.keymap.set("n", "n", "nzzzv", { desc = "something" })
 vim.keymap.set("n", "N", "Nzzzv", { desc = "something else" })
 vim.keymap.set("n", "<leader>lg", vim.lsp.buf.format, { desc = "LSP format" })
+vim.keymap.set("v", ">", ">gv", { desc = "Intend right" })
+vim.keymap.set("v", "<", "<gv", { desc = "Indent left" })
+
+--Folds
+vim.keymap.set("n", "<leader>zz", "za", { desc = "Toggle fold" })
+vim.keymap.set("n", "<leader>zo", "zR", { desc = "Open all folds" })
+vim.keymap.set("n", "<leader>zc", "zM", { desc = "Close all folds" })
 
 --close all buffers remap
 --TODO: does not work correctly. The dashboard draws over everthing and when files are opened again, they cannot be seen.

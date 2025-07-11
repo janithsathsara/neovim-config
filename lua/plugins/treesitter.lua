@@ -33,6 +33,7 @@ return {
 					"powershell", -- PowerShell
 				},
 				highlight = { enable = true },
+				fold = { enable = true },
 			})
 		end,
 	},
