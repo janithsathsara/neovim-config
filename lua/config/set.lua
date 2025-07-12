@@ -30,6 +30,7 @@ vim.opt.showtabline = 0
 vim.opt.foldcolumn = "0"
 vim.opt.cursorcolumn = false
 
+--NOTE: folding
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldlevel = 99

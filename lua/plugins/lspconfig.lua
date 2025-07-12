@@ -148,7 +148,7 @@ return {
 					userDictPath = "~/.config/harper-ls/dict.txt",
 				},
 			},
-			filetypes = { "markdown" },
+			filetypes = { "markdown", "text" },
 		})
 		vim.lsp.enable("harper_ls")
 
