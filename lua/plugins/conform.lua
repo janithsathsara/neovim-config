@@ -21,7 +21,7 @@ return {
 				json = { "prettierd" },
 				jsonc = { "prettierd" },
 				lua = { "stylua" },
-				markdown = { "mdformat" },
+				markdown = { "prettierd" },
 				python = {
 					"ruff_fix",
 					"ruff_format",

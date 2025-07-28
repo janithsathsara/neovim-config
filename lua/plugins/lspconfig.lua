@@ -258,6 +258,25 @@ return {
 				},
 			},
 			vim.lsp.enable("ts_ls"),
+
+			vim.lsp.config("tailwindcss", {
+				settings = {
+					tailwindCSS = {
+						classAttributes = { "class", "className", "class:list", "classList", "ngClass" },
+						lint = {
+							cssConflict = "warning",
+							invalidApply = "error",
+							invalidConfigPath = "error",
+							invalidScreen = "error",
+							invalidTailwindDirective = "error",
+							invalidVariant = "error",
+							recommendedVariantOrder = "warning",
+						},
+						validate = true,
+					},
+				},
+			}),
+			vim.lsp.enable("tailwindcss"),
 		})
 	end,
 }
