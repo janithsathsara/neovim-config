@@ -6,12 +6,13 @@ return {
 			"BufReadPre",
 			"BufNewFile",
 		},
-		version = "1.*",
 		-- Optional: provides snippets for the snippet source
 		dependencies = {
 			"rafamadriz/friendly-snippets",
 			{ "L3MON4D3/LuaSnip", version = "v2.*" },
 		},
+		version = "1.*",
+		-- build = "cargo build --release",
 		---@module 'blink.cmp'
 		opts = {
 			fuzzy = {
@@ -26,7 +27,7 @@ return {
 				prebuilt_binaries = {
 					download = true,
 					force_version = nil,
-					-- force_version = "v1.4.1",
+					-- force_version = "v1.6.0",
 				},
 			},
 			keymap = {

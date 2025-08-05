@@ -61,3 +61,8 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 	pattern = "komorebi.json",
 	command = "set filetype=jsonc",
 })
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+	pattern = "komorebi.bar.json",
+	command = "set filetype=jsonc",
+})

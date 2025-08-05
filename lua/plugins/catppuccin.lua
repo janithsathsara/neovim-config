@@ -12,17 +12,7 @@ return {
 		-- 	vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#cdd6f4", bg = "NONE", bold = true })
 		-- end,
 	},
-	{
-		"nobbmaestro/nvim-andromeda",
-		dependencies = { "tjdevries/colorbuddy.nvim", branch = "dev" },
-		lazy = true,
-		name = modus,
-		-- priority = 1000,
-		-- config = function()
-		-- 	require("andromeda").setup({})
-		-- 	-- vim.cmd.colorscheme([[colorscheme modus_operandi]])
-		-- end,
-	},
+
 	{
 
 		"folke/tokyonight.nvim",
