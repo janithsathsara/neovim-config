@@ -115,6 +115,7 @@ return {
 				"eruby",
 				"html",
 				"javascript",
+				"typescript",
 				"javascriptreact",
 				"less",
 				"sass",
@@ -150,9 +151,29 @@ return {
 					userDictPath = "~/.config/harper-ls/dict.txt",
 				},
 			},
-			filetypes = { "markdown", "text" },
+			-- filetypes = { "markdown", "text" },
 		})
-		vim.lsp.enable("harper_ls")
+
+		local isHarperEnabled = false
+
+		function EnableHarper()
+			if isHarperEnabled then
+				local harper_clients = vim.lsp.get_clients({ name = "harper_ls" })
+				for _, harper_client in ipairs(harper_clients) do
+					vim.lsp.stop_client(harper_client.id)
+				end
+				isHarperEnabled = false
+				print("harper disabled")
+			else
+				vim.lsp.enable("harper_ls")
+				isHarperEnabled = true
+				print("harper enabled")
+			end
+		end
+
+		vim.keymap.set("n", "<leader>lh", function()
+			EnableHarper()
+		end, { desc = "Enable Harper" })
 
 		-- HTML
 		vim.lsp.config("html", {
