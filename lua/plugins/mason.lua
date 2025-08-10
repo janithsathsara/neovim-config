@@ -45,6 +45,7 @@ return {
 					"ruff",
 					"rust-analyzer",
 					"taplo",
+					"tinymist",
 					"typescript-language-server",
 					-- tools
 					-- { "eslint_d", version = "13.1.2" },

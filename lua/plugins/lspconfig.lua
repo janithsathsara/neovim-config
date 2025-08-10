@@ -300,6 +300,34 @@ return {
 				},
 			}),
 			vim.lsp.enable("tailwindcss"),
+
+			vim.lsp.config("tinymist", {
+				cmd = { "tinymist" },
+
+				filetypes = { "typst" },
+				settings = {
+					formatterMode = "typstyle",
+					inlayHints = {
+						Designators = true,
+						Enabled = true,
+						ParameterNames = true,
+						DeducedTypes = true,
+					},
+					exportPdf = "onType",
+
+					semanticTokens = "disable",
+				},
+				linting = { enabled = true },
+			}),
+			vim.lsp.enable("tinymist"),
+
+			-- Set up formatting via LSP for Typst files
+			-- vim.api.nvim_create_autocmd("BufWritePre", {
+			-- 	pattern = "*.typ",
+			-- 	callback = function()
+			-- 		vim.lsp.buf.format({ async = false })
+			-- 	end,
+			-- }),
 		})
 	end,
 }

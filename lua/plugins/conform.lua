@@ -88,6 +88,7 @@ return {
 			callback = function(args)
 				conform.format({
 					bufnr = args.buf,
+					lsp_fallback = true,
 				})
 			end,
 		})
@@ -102,7 +103,7 @@ return {
 					timeout_ms = 1000,
 				})
 			end,
-			{
+			mode = {
 				"n",
 				"v",
 			},
