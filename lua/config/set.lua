@@ -66,3 +66,13 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 	pattern = "komorebi.bar.json",
 	command = "set filetype=jsonc",
 })
+
+-- open help as a vertical split
+vim.api.nvim_create_autocmd("BufWinEnter", {
+	pattern = { "*.txt" },
+	callback = function()
+		if vim.bo.buftype == "help" then
+			vim.cmd.wincmd("L") -- Move help window to the far right
+		end
+	end,
+})
