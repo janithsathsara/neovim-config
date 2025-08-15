@@ -23,6 +23,7 @@ return {
 		config = function()
 			require("tokyonight").setup({
 				style = "night",
+				transparent = true,
 				on_highlights = function(hl, colors)
 					--NOTE: line number colors
 					hl.LineNr = { fg = "#cdd6f4" } -- Bright yellow

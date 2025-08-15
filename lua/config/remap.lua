@@ -10,6 +10,9 @@ vim.keymap.set("v", "K", ":m '<-2<CR><CR>gv=gv")
 vim.keymap.set("n", "<leader>y", '"+y')
 vim.keymap.set("v", "<leader>y", '"+y')
 vim.keymap.set("n", "<leader>Y", '"+Y')
+vim.keymap.set("i", "<C-l>", function()
+	return "<Delete>"
+end, { noremap = true, silent = true, expr = true, desc = "delete rightside in insert mode" })
 
 --NOTE:packages
 vim.keymap.set("n", "<leader>pl", "<Cmd>Lazy<CR>")

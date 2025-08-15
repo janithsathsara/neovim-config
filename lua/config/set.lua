@@ -9,6 +9,9 @@ vim.opt.expandtab = true
 
 vim.opt.smartindent = true
 
+--Deactivate native auto-complete
+vim.opt.complete = ""
+
 vim.opt.wrap = false
 
 vim.opt.swapfile = false

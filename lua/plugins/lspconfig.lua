@@ -7,6 +7,7 @@ return {
 		{ "folke/neodev.nvim", opts = {} },
 	},
 	config = function()
+		local lspconfig = require("lspconfig")
 		local keymap = vim.keymap
 
 		vim.api.nvim_create_autocmd("LspAttach", {
@@ -77,11 +78,25 @@ return {
 		vim.lsp.enable("lua_ls")
 
 		-- Angular
-		vim.lsp.config("angularls", {
-			cmd = cmd,
-		})
-		vim.lsp.enable("angularls")
+		local function has_angular_root()
+			local found = vim.fs.find("angular.json", { upward = true, vim.uv.cwd() })
+			return #found > 0
+		end
 
+		vim.lsp.config("angularls", {
+			-- cmd = cmd,
+			cmd = {
+				"ngserver",
+				"--stdio",
+				"--tsProbeLocations",
+				"node_modules/typescript/lib",
+				"--ngProbeLocations",
+				"node_modules/@angular/language-service",
+			},
+		})
+		if has_angular_root() then
+			vim.lsp.enable("angularls")
+		end
 		-- C/C++
 		vim.lsp.config("clangd", {
 			settings = {
