@@ -58,3 +58,17 @@ vim.keymap.set("v", "s", "<Nop>", { silent = true })
 vim.keymap.set("n", "s", "<Nop>", { silent = true })
 vim.keymap.set("v", "S", "<Nop>", { silent = true })
 vim.keymap.set("n", "S", "<Nop>", { silent = true })
+
+--INFO: user command
+
+vim.api.nvim_create_user_command("Cl", function()
+	vim.cmd("normal! zz")
+end, { desc = "Center the current line" })
+
+vim.api.nvim_create_user_command("Ct", function()
+	vim.cmd("normal! zt")
+end, { desc = "Current line to the top" })
+
+vim.api.nvim_create_user_command("Cb", function()
+	vim.cmd("normal! zb")
+end, { "Current line to the bottom" })
