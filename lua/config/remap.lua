@@ -71,4 +71,4 @@ end, { desc = "Current line to the top" })
 
 vim.api.nvim_create_user_command("Cb", function()
 	vim.cmd("normal! zb")
-end, { "Current line to the bottom" })
+end, { desc = "Current line to the bottom" })
