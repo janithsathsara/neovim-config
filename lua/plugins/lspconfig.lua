@@ -7,7 +7,6 @@ return {
 		{ "folke/neodev.nvim", opts = {} },
 	},
 	config = function()
-		local lspconfig = require("lspconfig")
 		local keymap = vim.keymap
 
 		vim.api.nvim_create_autocmd("LspAttach", {
@@ -21,14 +20,11 @@ return {
 
 				keymap.set("n", "<leader>ld", vim.diagnostic.open_float, { desc = "Show line diagnosis" })
 
-				keymap.set(
-					"n",
-					"K",
-					'<cmd>lua vim.lsp.buf.hover({ border = "rounded" })<cr>',
-					{ desc = "Show documentation for what is under cursor" }
-				)
+				keymap.set("n", "K", function()
+					vim.lsp.buf.hover({ border = "rounded" })
+				end, { desc = "Show documentation for what is under cursor" })
 
-				keymap.set("n", "<leader>rs", ":LspRestart<CR>", { desc = "Restart LSP" })
+				keymap.set("n", "<leader>rs", "<CMD>LspRestart<CR>", { desc = "Restart LSP" })
 			end,
 		})
 

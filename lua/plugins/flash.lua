@@ -4,7 +4,10 @@ return {
 	opts = {
 		modes = {
 			char = {
-				enabled = false, -- disable f, F, t, T motions
+				enabled = true, -- disable f, F, t, T motions
+			},
+			search = {
+				enabled = true,
 			},
 		},
 	},
@@ -20,6 +23,7 @@ return {
         -- - return statements
         -- - function names
         -- - code blocks
+        -- Additional functionality. ; and , can be used to select each parent node or child node. with ; you can get the selected parent node and with , you can get unselect current node and only select the child node
         { "Z", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" }, -- jump and highlight treesitter nodes
 
         -- Remote operations
@@ -35,11 +39,13 @@ return {
         -- - entire functions
         -- - class definitions
         -- - loops or conditionals
-        -- { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+        -- selects scopes aka treesitter nodes. There are nodes just as S, you can select any node you want with it
+        { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
 
         -- Toggle flash during searches
         -- Example: In command mode (/) press Ctrl-s to
         -- toggle flash highlights while searching
-        -- { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
+        --NOTE: No need to toggle, added at opts above
+        -- { "<C-o>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
     },
 }
