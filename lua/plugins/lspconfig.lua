@@ -202,6 +202,7 @@ return {
 					validate = { enable = true },
 				},
 			},
+			filetypes = { "json", "jsonc" },
 		})
 		vim.lsp.enable("jsonls")
 

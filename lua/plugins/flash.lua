@@ -4,7 +4,7 @@ return {
 	opts = {
 		modes = {
 			char = {
-				enabled = true, -- disable f, F, t, T motions
+				enabled = false, -- disable f, F, t, T motions
 			},
 			search = {
 				enabled = true,
