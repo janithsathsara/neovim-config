@@ -54,14 +54,15 @@ vim.keymap.set("n", "<leader>sz", "<Cmd>cwindow<CR>", { desc = "Open quickfix li
 --unmap keys
 -- vim.keymap.set('n', 'x', '<Nop>', { silent = true })
 -- vim.keymap.set('v', 'x', '<Nop>', { silent = true })
-vim.keymap.set("v", "s", "<Nop>", { silent = true })
-vim.keymap.set("n", "s", "<Nop>", { silent = true })
-vim.keymap.set("v", "S", "<Nop>", { silent = true })
-vim.keymap.set("n", "S", "<Nop>", { silent = true })
+vim.keymap.set("v", "s", "<Nop>", { silent = true }) --Fix: mini-ai not working correctly
+vim.keymap.set("n", "s", "<Nop>", { silent = true }) --Fix: mini-ai not working correctly
+vim.keymap.set("v", "S", "<Nop>", { silent = true }) --Fix: mini-ai not working correctly
+vim.keymap.set("n", "S", "<Nop>", { silent = true }) --Fix: mini-ai not working correctly
+
 vim.keymap.set("s", "s", "s", { silent = true }) --Fix: s not working in select mode
 vim.keymap.set("s", "S", "S", { silent = true }) --Fix: s not working in select mode
-
---Fix: s does not work in select mode
+vim.keymap.set("s", "K", "K", { silent = true }) --Fix: Map back the KJ motions to normal in select mode
+vim.keymap.set("s", "J", "J", { silent = true }) --Fix: Map back the KJ motions to normal in select mode
 
 --INFO: user command
 
