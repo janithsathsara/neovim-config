@@ -58,6 +58,10 @@ vim.keymap.set("v", "s", "<Nop>", { silent = true })
 vim.keymap.set("n", "s", "<Nop>", { silent = true })
 vim.keymap.set("v", "S", "<Nop>", { silent = true })
 vim.keymap.set("n", "S", "<Nop>", { silent = true })
+vim.keymap.set("s", "s", "s", { silent = true }) --Fix: s not working in select mode
+vim.keymap.set("s", "S", "S", { silent = true }) --Fix: s not working in select mode
+
+--Fix: s does not work in select mode
 
 --INFO: user command
 
