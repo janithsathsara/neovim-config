@@ -17,6 +17,8 @@ vim.opt.wrap = false
 vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undofile = true
+vim.opt.fileformats = { "unix", "dos" }
+vim.opt.fillchars = { eob = " " } -- character that appears after line ending
 
 vim.opt.hlsearch = false
 vim.opt.incsearch = true

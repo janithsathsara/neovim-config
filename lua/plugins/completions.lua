@@ -17,7 +17,9 @@ return {
 		opts = {
 			fuzzy = {
 				implementation = "prefer_rust_with_warning",
-				use_frecency = true,
+				frecency = {
+					enabled = true,
+				},
 				use_proximity = true,
 				sorts = {
 					"exact",
