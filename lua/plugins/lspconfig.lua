@@ -109,6 +109,13 @@ return {
 		vim.lsp.config("csharp_ls", {})
 		vim.lsp.enable("csharp_ls")
 
+		--OpenGL
+		vim.lsp.config("glsl_analyzer", {
+			cmd = { "glsl_analyzer" },
+			filetypes = { "glsl", "vert", "frag", "geom", "comp" },
+		})
+		vim.lsp.enable("glsl_analyzer")
+
 		-- CSS
 		vim.lsp.config("cssls", {
 			settings = {

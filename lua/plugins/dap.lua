@@ -225,7 +225,12 @@ return {
 		ft = "python", -- Only load for Python files
 		dependencies = { "mfussenegger/nvim-dap" },
 		config = function()
-			require("dap-python").setup("C:\\Users\\BlackPearl\\AppData\\Local\\nvim-data\\mason\\packages\\debugpy\\venv\\Scripts\\python.exe")
+			require("dap-python").setup("C:\\Users\\BlackPearl\\AppData\\Local\\nvim-data\\mason\\packages\\debugpy\\venv\\Scripts\\python.exe", {
+				rocks = {
+					enabled = true,
+					hererocks = true,
+				},
+			})
 			require("dap-python").test_runner = "pytest"
 		end,
 	},
