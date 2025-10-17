@@ -30,6 +30,7 @@ return {
 				ensure_installed = {
 					--lsp servers
 					"angular-language-server",
+					"bash-language-server",
 					"clangd",
 					"csharp-language-server",
 					"css-lsp",
@@ -40,7 +41,6 @@ return {
 					"json-lsp",
 					"lua-language-server",
 					"marksman",
-					"powershell-editor-services",
 					"basedpyright",
 					"ruff",
 					"rust-analyzer",

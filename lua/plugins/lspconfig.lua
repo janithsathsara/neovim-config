@@ -73,6 +73,13 @@ return {
 		})
 		vim.lsp.enable("lua_ls")
 
+		vim.lsp.config("bashls", {
+			cmd = { "bash-language-server", "start" },
+			filetypes = { "sh", "bash", "zsh" },
+			root_markers = { ".git" },
+		})
+		vim.lsp.enable("bashls")
+
 		-- Angular
 		local function has_angular_root()
 			local found = vim.fs.find("angular.json", { upward = true, vim.uv.cwd() })
@@ -216,12 +223,6 @@ return {
 		-- Markdown
 		vim.lsp.config("marksman", {})
 		vim.lsp.enable("marksman")
-
-		-- PowerShell
-		vim.lsp.config("powershell_es", {
-			bundle_path = vim.fn.stdpath("data") .. "/mason/packages/powershell-editor-services",
-		})
-		vim.lsp.enable("powershell_es")
 
 		--ruff
 		vim.lsp.config("ruff", {

@@ -27,7 +27,6 @@ return {
 					"ruff_format",
 					"ruff_organize_imports",
 				},
-				ps1 = { "powershell_es" },
 				rust = { "rustfmt" },
 				svelte = { "prettierd" },
 				sh = { "shellcheck" },
@@ -66,20 +65,6 @@ return {
 					command = "mdformat",
 					args = { "--wrap", "148", "-" },
 					stdin = true,
-				},
-				powershell_es = {
-					-- Use LSP formatting
-					format = function(self, ctx, lines, callback)
-						vim.lsp.buf.format({
-							async = true,
-							filter = function(client)
-								return client.name == "powershell_es"
-							end,
-						})
-						-- Since LSP formatting is async, we call the callback immediately
-						-- The actual formatting will be handled by the LSP
-						callback(nil, lines)
-					end,
 				},
 			},
 		})
