@@ -13,6 +13,7 @@ return {
 				bash = { "beautysh" },
 				cs = { "clang_format" },
 				c = { "clang-format" },
+				hyprlang = { "taplo" },
 				cpp = { "clang-format" },
 				go = { "goimports" },
 				html = { "prettierd" },

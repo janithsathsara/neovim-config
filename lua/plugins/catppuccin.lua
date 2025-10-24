@@ -5,23 +5,19 @@ return {
 		name = "catppuccin",
 		priority = 1000,
 		config = function()
-			vim.cmd.colorscheme("catppuccin-mocha")
-
-			--NOTE: line number colors
-			-- vim.api.nvim_set_hl(0, "LineNr", { fg = "#cdd6f4", bg = "NONE" })
-			-- vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#cdd6f4", bg = "NONE", bold = true })
-			--NOTE: background transparent
-
 			require("catppuccin").setup({
 				flavour = "mocha", -- latte, frappe, macchiato, mocha
 				transparent_background = true,
-				mocha = {
-					highlight_overrides = {
-						LineNr = { fg = "#cdd6f4" },
-						CursorLineNr = { fg = "#cdd6f4" },
-					},
+				highlight_overrides = {
+					all = function(colors)
+						return {
+							LineNr = { fg = "#89dceb" },
+							CursorLineNr = { fg = "#f38ba8" },
+						}
+					end,
 				},
 			})
+			vim.cmd.colorscheme("catppuccin-mocha")
 		end,
 	},
 

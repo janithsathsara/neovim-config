@@ -37,6 +37,7 @@ return {
 					"emmet-language-server",
 					"gopls",
 					"harper-ls",
+					"hyprls",
 					"html-lsp",
 					"json-lsp",
 					"lua-language-server",

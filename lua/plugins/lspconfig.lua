@@ -100,8 +100,13 @@ return {
 		if has_angular_root() then
 			vim.lsp.enable("angularls")
 		end
+
 		-- C/C++
 		vim.lsp.config("clangd", {
+			cmd = {
+				"clangd",
+				"--compile-commands-dir=build",
+			},
 			settings = {
 				inlayHints = {
 					Designators = true,
@@ -168,6 +173,14 @@ return {
 			},
 		})
 		vim.lsp.enable("gopls")
+
+		--hyprlang
+		vim.lsp.config("hyprls", {
+			filetypes = { "hyprlang" },
+			{ "hyprls", "--stdio" },
+			{ ".git" },
+		})
+		vim.lsp.enable("hyprls")
 
 		-- Harper (Grammar/Spell checker)
 		vim.lsp.config("harper_ls", {
