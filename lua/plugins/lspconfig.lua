@@ -24,7 +24,7 @@ return {
 				keymap.set("n", "K", function()
 					vim.lsp.buf.hover({ border = "rounded" })
 				end, { desc = "Show documentation for what is under cursor" })
-				keymap.set({ "n", "i", "v", "s" }, "S", function()
+				keymap.set({ "n", "v", "s" }, "S", function()
 					vim.lsp.buf.signature_help({ border = "rounded" })
 				end, { desc = "Show documentation for what is under cursor" })
 				keymap.set("n", "<leader>rs", "<CMD>LspRestart<CR>", { desc = "Restart LSP" })
