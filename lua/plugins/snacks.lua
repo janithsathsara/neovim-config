@@ -216,43 +216,6 @@ return {
 				end,
 				desc = "Projects",
 			},
-			-- LSP
-			{
-				"gd",
-				function()
-					Snacks.picker.lsp_definitions()
-				end,
-				desc = "Goto Definition",
-			},
-			{
-				"<leader>lr",
-				function()
-					Snacks.picker.lsp_references()
-				end,
-				nowait = true,
-				desc = "References",
-			},
-			{
-				"<leader>li",
-				function()
-					Snacks.picker.lsp_implementations()
-				end,
-				desc = "Goto Implementation",
-			},
-			{
-				"<leader>lt",
-				function()
-					Snacks.picker.lsp_type_definitions()
-				end,
-				desc = "Goto T[y]pe Definition",
-			},
-			{
-				"<leader>ls",
-				function()
-					Snacks.picker.lsp_symbols()
-				end,
-				desc = "LSP Symbols",
-			},
 			--git
 			{
 				"<leader>gb",
@@ -268,28 +231,6 @@ return {
 				end,
 				desc = "Get Root",
 			},
-			-- LazyGit
-			-- {
-			-- 	"<leader>gg",
-			-- 	function()
-			-- 		Snacks.lazygit()
-			-- 	end,
-			-- 	desc = "Lazygit",
-			-- },
-			-- {
-			-- 	"<leader>gl",
-			-- 	function()
-			-- 		Snacks.lazygit.log()
-			-- 	end,
-			-- 	desc = "Lazygit Log",
-			-- },
-			-- {
-			-- 	"<leader>gf",
-			-- 	function()
-			-- 		Snacks.lazygit.log_file()
-			-- 	end,
-			-- 	desc = "Current File Log",
-			-- },
 		},
 	},
 	{
