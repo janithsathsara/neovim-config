@@ -57,5 +57,3 @@ vim.keymap.set("n", "<leader>uz", toggleZenMode, { desc = "Toggle zen Mode" })
 --NOTE:vim
 -- vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 -- vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
--- asldkjfalsj lkasdkjflas jdt
--- adskjflasdjfla llasdj flasdj

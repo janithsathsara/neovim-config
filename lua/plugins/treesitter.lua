@@ -20,6 +20,7 @@ return {
 					"html", -- HTML
 					"css", -- CSS
 					"json", -- JSON
+					"jsonc", -- JSON
 					"bash", -- Bash
 					"markdown", -- Markdown
 					"yaml", -- YAML
