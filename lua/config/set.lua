@@ -9,6 +9,10 @@ vim.opt.expandtab = true
 
 vim.opt.smartindent = true
 
+-- Ruler format
+vim.opt.ruler = true
+-- vim.opt.rulerformat = [[Ln %l%H, Col %c%V | VCol %V | %p%% | %{&filetype} | %{&fileencoding} ]]
+
 --Deactivate native auto-complete
 vim.opt.complete = ""
 
@@ -82,6 +86,8 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
 	callback = function()
 		if vim.bo.buftype == "help" then
 			vim.cmd.wincmd("L") -- Move help window to the far right
+			vim.opt.number = true
+			vim.opt.relativenumber = true
 		end
 	end,
 })

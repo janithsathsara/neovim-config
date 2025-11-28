@@ -12,6 +12,16 @@ return {
 			bigfile = { enable = true },
 			git = { enable = true },
 		},
+		-- config = function()
+		-- 	require("snacks").picker.files({
+		-- 		-- hidden = true,
+		-- 		-- ignored = false,
+		-- 		-- args = {
+		-- 		-- 	"--glob",
+		-- 		-- 	"!{build}",
+		-- 		-- },
+		-- 	})
+		-- end,
 		keys = {
 			-- find
 			{
@@ -50,13 +60,13 @@ return {
 				desc = "Recent",
 			},
 			-- git
-			-- {
-			-- 	"<leader>gc",
-			-- 	function()
-			-- 		Snacks.picker.git_log()
-			-- 	end,
-			-- 	desc = "Git Log",
-			-- },
+			{
+				"<leader>gb",
+				function()
+					Snacks.picker.git_log()
+				end,
+				desc = "Git Log",
+			},
 			{
 				"<leader>gs",
 				function()
@@ -215,21 +225,6 @@ return {
 					Snacks.picker.projects()
 				end,
 				desc = "Projects",
-			},
-			--git
-			{
-				"<leader>gb",
-				function()
-					Snacks.git.blame_line()
-				end,
-				desc = "Blame Line",
-			},
-			{
-				"<leader>gr",
-				function()
-					Snacks.git.get_root()
-				end,
-				desc = "Get Root",
 			},
 		},
 	},
