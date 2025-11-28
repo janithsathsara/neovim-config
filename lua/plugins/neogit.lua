@@ -9,14 +9,18 @@ return {
 			"folke/snacks.nvim", -- optional
 		},
 		config = function()
-			require("neogit").setup()
+			local neogit = require("neogit")
+			neogit.setup({
+				disable_line_numbers = false,
+				disable_relative_line_numbers = false,
+			})
 		end,
 		keys = {
 			{ "<leader>gg", "<Cmd>Neogit<CR>", "n", desc = "Neogit open" },
 			{
 				"<leader>gc",
 				function()
-					neogit.open({ "commit" })
+					require("neogit").open({ "commit" })
 				end,
 				"n",
 				desc = "Neogit commit",
