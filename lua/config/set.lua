@@ -91,3 +91,12 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
 		end
 	end,
 })
+
+-- open manpages as a vertical split
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "man",
+	callback = function()
+		vim.opt.number = true
+		vim.opt.relativenumber = true
+	end,
+})
