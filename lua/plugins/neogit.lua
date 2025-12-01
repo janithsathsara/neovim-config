@@ -3,16 +3,19 @@ return {
 		"NeogitOrg/neogit",
 		lazy = true,
 		dependencies = {
-			"nvim-lua/plenary.nvim", -- required
-			"sindrets/diffview.nvim", -- optional - Diff integration
-
-			"folke/snacks.nvim", -- optional
+			"nvim-lua/plenary.nvim",
+			"sindrets/diffview.nvim", --  Diff integration
+			"folke/snacks.nvim",
 		},
 		config = function()
 			local neogit = require("neogit")
 			neogit.setup({
 				disable_line_numbers = false,
 				disable_relative_line_numbers = false,
+				integrations = {
+					diffview = true,
+					snacks = true,
+				},
 			})
 		end,
 		keys = {

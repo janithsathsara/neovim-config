@@ -49,7 +49,8 @@ return {
 					"tinymist",
 					"typescript-language-server",
 					-- tools
-					-- { "eslint_d", version = "13.1.2" },
+					"eslint_d",
+					"beautysh",
 					"clang-format",
 					"codelldb", -- Rust debugging
 					"debugpy",
@@ -57,6 +58,7 @@ return {
 					"goimports",
 					"js-debug-adapter",
 					"prettierd",
+					"shellcheck", -- Bash linter
 					"stylua",
 				},
 			})

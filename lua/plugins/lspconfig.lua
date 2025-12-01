@@ -77,6 +77,14 @@ return {
 		vim.lsp.enable("lua_ls")
 
 		vim.lsp.config("bashls", {
+			settings = {
+				bashIde = {
+					-- Enable ShellCheck linting (requires shellcheck installed)
+					enableSourceErrorDiagnostics = true,
+					-- Optional: Specify shellcheck executable path if not in PATH
+					-- shellcheckPath = "shellcheck",
+				},
+			},
 			cmd = { "bash-language-server", "start" },
 			filetypes = { "sh", "bash", "zsh" },
 			root_markers = { ".git" },
@@ -124,13 +132,6 @@ return {
 		vim.lsp.config("csharp_ls", {})
 		vim.lsp.enable("csharp_ls")
 
-		--OpenGL
-		vim.lsp.config("glsl_analyzer", {
-			cmd = { "glsl_analyzer" },
-			filetypes = { "glsl", "vert", "frag", "geom", "comp" },
-		})
-		vim.lsp.enable("glsl_analyzer")
-
 		-- CSS
 		vim.lsp.config("cssls", {
 			settings = {
@@ -158,6 +159,17 @@ return {
 			},
 		})
 		vim.lsp.enable("emmet_language_server")
+
+		-- -- ESLINT
+		-- vim.lsp.config("eslint_d", {
+		-- 	filetypes = {
+		-- 		"javascript",
+		-- 		"typescript",
+		-- 		"javascriptreact",
+		-- 		"typescriptreact",
+		-- 	},
+		-- })
+		-- vim.lsp.enable("eslint_d")
 
 		-- Go
 		vim.lsp.config("gopls", {

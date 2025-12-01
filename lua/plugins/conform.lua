@@ -10,10 +10,9 @@ return {
 
 		conform.setup({
 			formatters_by_ft = {
-				bash = { "beautysh" },
+				sh = { "beautysh" },
 				cs = { "clang_format" },
-				c = { "clang-format" },
-				hyprlang = { "taplo" },
+				-- c = { "clang-format" },
 				cpp = { "clang-format" },
 				go = { "goimports" },
 				html = { "prettierd" },
@@ -30,7 +29,7 @@ return {
 				},
 				rust = { "rustfmt" },
 				svelte = { "prettierd" },
-				sh = { "shellcheck" },
+				-- sh = { "shellcheck" },
 				typescript = { "prettierd" },
 				typescriptreact = { "prettierd" },
 				toml = { "taplo" },
@@ -74,7 +73,7 @@ return {
 			callback = function(args)
 				conform.format({
 					bufnr = args.buf,
-					lsp_fallback = true,
+					lsp_fallback = false,
 				})
 			end,
 		})

@@ -1,7 +1,7 @@
 return {
 	"sindrets/diffview.nvim",
 	lazy = true,
-	config = nil,
+	config = true,
 	keys = {
 		{
 			"<leader>gd",
