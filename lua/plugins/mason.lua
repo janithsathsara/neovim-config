@@ -56,6 +56,7 @@ return {
 					"debugpy",
 					"delve", -- Go debugging
 					"goimports",
+					"oxlint",
 					"js-debug-adapter",
 					"prettierd",
 					"shellcheck", -- Bash linter
