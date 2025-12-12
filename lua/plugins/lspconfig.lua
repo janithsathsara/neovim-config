@@ -24,7 +24,7 @@ return {
 				keymap.set("n", "K", function()
 					vim.lsp.buf.hover({ border = "rounded" })
 				end, { desc = "Show documentation for what is under cursor" })
-				keymap.set({ "n", "v", "s" }, "S", function()
+				keymap.set({ "n", "v", "s" }, "<M-s>", function()
 					vim.lsp.buf.signature_help({ border = "rounded" })
 				end, { desc = "Show documentation for what is under cursor" })
 				keymap.set("n", "<leader>rs", "<CMD>LspRestart<CR>", { desc = "Restart LSP" })
@@ -142,6 +142,57 @@ return {
 		})
 		vim.lsp.enable("cssls")
 
+		-- Docker
+		vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+			pattern = { "docker-compose.yml", "docker-compose.yaml", "compose.yml", "compose.yaml" },
+			callback = function()
+				vim.bo.filetype = "yaml.docker-compose"
+			end,
+		})
+
+		vim.lsp.config("docker_language_server", {
+			filetypes = { "dockerfile", "yaml.compose", "yaml.docker-compose" },
+			root_markers = {
+				"Dockerfile",
+				"docker-compose.yaml",
+				"docker-compose.yml",
+				"compose.yaml",
+				"compose.yml",
+				"docker-bake.json",
+				"docker-bake.hcl",
+				"docker-bake.override.json",
+				"docker-bake.override.hcl",
+			},
+			cmd = {
+				"docker-language-server",
+				"start",
+				"--stdio",
+			},
+		})
+		vim.lsp.enable("docker_language_server")
+
+		-- Docker
+		vim.lsp.config("docker_language_server", {
+			filetypes = { "dockerfile", "yaml.compose", "yaml.docker-compose" },
+			root_markers = {
+				"Dockerfile",
+				"docker-compose.yaml",
+				"docker-compose.yml",
+				"compose.yaml",
+				"compose.yml",
+				"docker-bake.json",
+				"docker-bake.hcl",
+				"docker-bake.override.json",
+				"docker-bake.override.hcl",
+			},
+			cmd = {
+				"docker-language-server",
+				"start",
+				"--stdio",
+			},
+		})
+		vim.lsp.enable("docker_language_server")
+
 		-- Emmet
 		vim.lsp.config("emmet_language_server", {
 			filetypes = {
@@ -159,17 +210,6 @@ return {
 			},
 		})
 		vim.lsp.enable("emmet_language_server")
-
-		-- -- ESLINT
-		-- vim.lsp.config("eslint_d", {
-		-- 	filetypes = {
-		-- 		"javascript",
-		-- 		"typescript",
-		-- 		"javascriptreact",
-		-- 		"typescriptreact",
-		-- 	},
-		-- })
-		-- vim.lsp.enable("eslint_d")
 
 		-- Go
 		vim.lsp.config("gopls", {
@@ -283,8 +323,18 @@ return {
 
 		-- Rust
 		vim.lsp.config("rust_analyzer", {
+			cmd = { "rust-analyzer" },
+			filetypes = { "rust" },
 			settings = {
 				["rust-analyzer"] = {
+					cargo = {
+						allFeatures = true,
+						loadOutDirsFromCheck = true,
+					},
+					procMacro = {
+						enable = true,
+					},
+					diagnostics = { enable = true },
 					inlayHints = {
 						chainingHints = true,
 						typeHints = true,
@@ -328,54 +378,58 @@ return {
 					},
 				},
 			},
-			vim.lsp.enable("ts_ls"),
-
-			vim.lsp.config("tailwindcss", {
-				settings = {
-					tailwindCSS = {
-						classAttributes = { "class", "className", "class:list", "classList", "ngClass" },
-						lint = {
-							cssConflict = "warning",
-							invalidApply = "error",
-							invalidConfigPath = "error",
-							invalidScreen = "error",
-							invalidTailwindDirective = "error",
-							invalidVariant = "error",
-							recommendedVariantOrder = "warning",
-						},
-						validate = true,
-					},
-				},
-			}),
-			vim.lsp.enable("tailwindcss"),
-
-			vim.lsp.config("tinymist", {
-				cmd = { "tinymist" },
-
-				filetypes = { "typst" },
-				settings = {
-					formatterMode = "typstyle",
-					inlayHints = {
-						Designators = true,
-						Enabled = true,
-						ParameterNames = true,
-						DeducedTypes = true,
-					},
-					exportPdf = "onType",
-
-					semanticTokens = "disable",
-				},
-				linting = { enabled = true },
-			}),
-			vim.lsp.enable("tinymist"),
-
-			-- Set up formatting via LSP for Typst files
-			-- vim.api.nvim_create_autocmd("BufWritePre", {
-			-- 	pattern = "*.typ",
-			-- 	callback = function()
-			-- 		vim.lsp.buf.format({ async = false })
-			-- 	end,
-			-- }),
 		})
+		vim.lsp.enable("ts_ls")
+
+		vim.lsp.config("tailwindcss", {
+			settings = {
+				tailwindCSS = {
+					classAttributes = { "class", "className", "class:list", "classList", "ngClass" },
+					lint = {
+						cssConflict = "warning",
+						invalidApply = "error",
+						invalidConfigPath = "error",
+						invalidScreen = "error",
+						invalidTailwindDirective = "error",
+						invalidVariant = "error",
+						recommendedVariantOrder = "warning",
+					},
+					validate = true,
+				},
+			},
+		})
+		vim.lsp.enable("tailwindcss")
+
+		vim.lsp.config("tinymist", {
+			cmd = { "tinymist" },
+
+			filetypes = { "typst" },
+			settings = {
+				formatterMode = "typstyle",
+				inlayHints = {
+					Designators = true,
+					Enabled = true,
+					ParameterNames = true,
+					DeducedTypes = true,
+				},
+				exportPdf = "onType",
+
+				semanticTokens = "disable",
+			},
+			linting = { enabled = true },
+		})
+		vim.lsp.enable("tinymist")
+
+		-- Set up formatting via LSP for Typst files
+		-- vim.api.nvim_create_autocmd("BufWritePre", {
+		-- 	pattern = "*.typ",
+		-- 	callback = function()
+		-- 		vim.lsp.buf.format({ async = false })
+		-- 	end,
+		-- }),
+
+		-- Yaml
+		vim.lsp.config("yamlls", {})
+		vim.lsp.enable("yamlls")
 	end,
 }

@@ -48,6 +48,7 @@ return {
 					"taplo",
 					"tinymist",
 					"typescript-language-server",
+					"yaml-language-server",
 					-- tools
 					"eslint_d",
 					"beautysh",
@@ -61,6 +62,7 @@ return {
 					"prettierd",
 					"shellcheck", -- Bash linter
 					"stylua",
+					"typstyle",
 				},
 			})
 		end,

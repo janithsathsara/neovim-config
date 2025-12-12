@@ -13,6 +13,7 @@ return {
 				context_commentstring = { enable = true },
 				ensure_installed = {
 					"c_sharp", --csharp
+					"dockerfile",
 					"lua", -- Lua
 					"python", -- Python
 					"javascript", -- JavaScript
@@ -31,6 +32,7 @@ return {
 					"java", -- Java
 					"sql", -- SQL
 					"markdown_inline", -- Markdown
+					"yaml", -- yaml
 				},
 				highlight = { enable = true },
 				fold = { enable = true },

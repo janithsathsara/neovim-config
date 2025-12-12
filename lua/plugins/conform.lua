@@ -32,6 +32,7 @@ return {
 				-- sh = { "shellcheck" },
 				typescript = { "prettierd" },
 				typescriptreact = { "prettierd" },
+				typst = { "typstyle" },
 				toml = { "taplo" },
 				xml = { "xmllint" },
 			},

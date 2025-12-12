@@ -100,3 +100,16 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.opt.relativenumber = true
 	end,
 })
+
+-- No more autocommets in newlines
+vim.api.nvim_create_autocmd("FileType", {
+	group = vim.api.nvim_create_augroup("no_auto_comment", {}),
+	callback = function()
+		vim.opt_local.formatoptions:remove({ "c", "r", "o" })
+	end,
+})
+
+-- Auto rezide splits
+vim.api.nvim_create_autocmd("VimResized", {
+	command = "wincmd =",
+})
