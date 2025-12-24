@@ -34,6 +34,11 @@ return {
 			},
 			keymap = {
 				preset = "default",
+
+				-- Explicitly disable Tab and Shift-Tab
+				["<Tab>"] = {}, -- Stop weird teleportation behavior
+				["<S-Tab>"] = {}, -- When pressing tab in insert mode
+
 				["<C-y>"] = { "select_and_accept" },
 
 				["<C-k>"] = { "select_prev", "fallback" },
