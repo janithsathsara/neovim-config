@@ -6,8 +6,5 @@ return {
 		"BufNewFile",
 	},
 	dependencies = { "MunifTanjim/nui.nvim" },
-	opts = {},
-	config = function()
-		require("hardtime").setup()
-	end,
+	opts = { enabled = false },
 }

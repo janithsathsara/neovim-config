@@ -12,8 +12,8 @@ return {
 			formatters_by_ft = {
 				sh = { "beautysh" },
 				cs = { "clang_format" },
-				-- c = { "clang-format" },
-				cpp = { "clang-format" },
+				c = { "clang_format" },
+				cpp = { "clang_format" },
 				go = { "goimports" },
 				html = { "prettierd" },
 				javascript = { "prettierd" },
@@ -51,12 +51,12 @@ return {
 						"max_width=150",
 					},
 				},
-				clang_format = {
-					prepend_args = {
-						"--style",
-						"{IndentWidth: 4, TabWidth: 4, UseTab: Never}",
-					},
-				},
+				-- clang_format = {
+				-- 	prepend_args = {
+				-- 		"--style",
+				-- 		"{IndentWidth: 4, TabWidth: 4, UseTab: Never}",
+				-- 	},
+				-- },
 				prettierd = {
 					prepend_args = {
 						"--tab-width=4", -- Set tab width to 2 spaces

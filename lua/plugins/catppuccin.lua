@@ -72,7 +72,7 @@ return {
 				palette_overrides = {},
 				overrides = {},
 				dim_inactive = false,
-				transparent_mode = false,
+				transparent_mode = true,
 			})
 			vim.opt.background = "dark"
 			vim.cmd("colorscheme gruvbox")
