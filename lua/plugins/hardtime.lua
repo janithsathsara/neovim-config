@@ -6,5 +6,5 @@ return {
 		"BufNewFile",
 	},
 	dependencies = { "MunifTanjim/nui.nvim" },
-	opts = { enabled = false },
+	opts = { enabled = true },
 }
