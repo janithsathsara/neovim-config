@@ -12,12 +12,13 @@ return {
 			"mfussenegger/nvim-dap-python",
 		},
 		config = function()
+			local mason_packages = vim.fn.stdpath("data") .. "/mason/packages"
 			-- Mason setup
 			require("mason").setup()
 			-- Go setup
 			require("dap-go").setup({
 				delve = {
-					path = "C:\\Users\\BlackPearl\\AppData\\Local\\nvim-data\\mason\\packages\\delve\\dlv.exe",
+					path = mason_packages .. "/delve/dlv",
 				},
 			})
 
@@ -56,7 +57,7 @@ return {
 					command = "node",
 					-- 💀 Make sure to update this path to point to your installation
 					args = {
-						"C:\\Users\\BlackPearl\\AppData\\Local\\nvim-data\\mason\\packages\\js-debug-adapter\\js-debug\\src\\dapDebugServer.js",
+						mason_packages .. "/js-debug-adapter/js-debug/src/dapDebugServer.js",
 						"${port}",
 					},
 				},
@@ -70,6 +71,38 @@ return {
 					cwd = "${workspaceFolder}",
 					console = "integratedTerminal",
 					terminalKind = "integrated",
+				},
+			}
+
+			dap.adapters.lldb = {
+				type = "executable",
+				command = mason_packages .. "/codelldb/codelldb",
+				name = "lldb",
+			}
+			dap.configurations.c = {
+				{
+					name = "Launch",
+					type = "lldb",
+					request = "launch",
+					program = function()
+						return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+					end,
+					cwd = "${workspaceFolder}",
+					stopOnEntry = false,
+					args = {},
+
+					-- 💀
+					-- if you change `runInTerminal` to true, you might need to change the yama/ptrace_scope setting:
+					--
+					--    echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
+					--
+					-- Otherwise you might get the following error:
+					--
+					--    Error on launch: Failed to attach to the target process
+					--
+					-- But you should be aware of the implications:
+					-- https://www.kernel.org/doc/html/latest/admin-guide/LSM/Yama.html
+					-- runInTerminal = false,
 				},
 			}
 
@@ -194,7 +227,7 @@ return {
 		ft = "python", -- Only load for Python files
 		dependencies = { "mfussenegger/nvim-dap" },
 		config = function()
-			require("dap-python").setup("C:\\Users\\BlackPearl\\AppData\\Local\\nvim-data\\mason\\packages\\debugpy\\venv\\Scripts\\python.exe", {
+			require("dap-python").setup(vim.fn.stdpath("data") .. "/mason/packages/debugpy/venv/bin/python", {
 				rocks = {
 					enabled = true,
 					hererocks = true,
