@@ -25,13 +25,14 @@ vim.opt.undofile = true
 vim.opt.fileformats = { "unix", "dos" }
 vim.opt.fillchars = { eob = " " } -- character that appears after line ending
 
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
 vim.opt.incsearch = true
 vim.opt.winborder = "single"
 
 vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 8
+vim.opt.sidescrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.laststatus = 2
 vim.opt.linebreak = true
@@ -55,7 +56,7 @@ vim.lsp.inlay_hint.enable(true)
 
 vim.opt.updatetime = 50
 
--- vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "80"
 
 vim.opt.shortmess:append("a")
 vim.opt.shortmess:append("t")
@@ -113,4 +114,11 @@ vim.api.nvim_create_autocmd("FileType", {
 -- Auto rezide splits
 vim.api.nvim_create_autocmd("VimResized", {
 	command = "wincmd =",
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "<filetype>" },
+	callback = function()
+		pcall(vim.treesitter.start)
+	end,
 })

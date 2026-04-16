@@ -30,6 +30,7 @@ return {
 				ensure_installed = {
 					--lsp servers
 					"angular-language-server",
+					"basedpyright",
 					"bash-language-server",
 					"clangd",
 					"csharp-language-server",
@@ -37,28 +38,28 @@ return {
 					"emmet-language-server",
 					"gopls",
 					"harper-ls",
-					"hyprls",
 					"html-lsp",
+					"hyprls",
 					"json-lsp",
 					"lua-language-server",
 					"marksman",
-					"basedpyright",
 					"ruff",
 					"rust-analyzer",
+					"tailwindcss-language-server",
 					"taplo",
 					"tinymist",
 					"typescript-language-server",
 					"yaml-language-server",
 					-- tools
-					"eslint_d",
 					"beautysh",
 					"clang-format",
 					"codelldb", -- Rust debugging
 					"debugpy",
 					"delve", -- Go debugging
+					"eslint_d",
 					"goimports",
-					"oxlint",
 					"js-debug-adapter",
+					"oxlint",
 					"prettierd",
 					"shellcheck", -- Bash linter
 					"stylua",

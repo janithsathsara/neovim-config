@@ -17,6 +17,7 @@ end, { noremap = true, silent = true, expr = true, desc = "delete rightside in i
 --NOTE:packages
 vim.keymap.set("n", "<leader>pl", "<Cmd>Lazy<CR>")
 vim.keymap.set("n", "<leader>pm", "<Cmd>Mason<CR>")
+vim.keymap.set("n", "<leader>pt", "<Cmd>TSManager<CR>")
 
 -- vim.keymap.set("n", "<C-V>", [["+p]], { desc = "copy from os clipboard" })
 vim.keymap.set("n", "G", "Gzz", { desc = "Move to the bottom of the page" })
