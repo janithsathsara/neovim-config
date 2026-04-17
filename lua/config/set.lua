@@ -41,9 +41,9 @@ vim.opt.showtabline = 0
 vim.opt.foldcolumn = "0"
 vim.opt.cursorcolumn = false
 
--- these two were required to fix the cursorlinenr not correctly showing issue
+-- these two were required to fix the cursorline not correctly showing issue
 vim.opt.cursorline = true
-vim.opt.cursorlineopt = "number"
+vim.opt.cursorlineopt = "both"
 
 --NOTE: folding
 vim.opt.foldmethod = "expr"
