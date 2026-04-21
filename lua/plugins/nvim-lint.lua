@@ -8,13 +8,14 @@ return {
 		local lint = require("lint")
 
 		require("lint").linters_by_ft = {
-			sh = { "shellcheck" },
 			javascript = { "oxlint" },
-			typescript = { "oxlint" },
 			javascriptreact = { "oxlint" },
-			typescriptreact = { "oxlint" },
-			svelte = { "oxlint" },
+			lua = { "selene" },
 			python = { "ruff" },
+			sh = { "shellcheck" },
+			svelte = { "oxlint" },
+			typescript = { "oxlint" },
+			typescriptreact = { "oxlint" },
 		}
 
 		lint.linters.eslint_d = require("lint").linters.eslint_d

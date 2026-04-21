@@ -35,7 +35,7 @@ vim.keymap.set("v", "<", "<gv", { desc = "Indent left" })
 
 --close all buffers remap
 --TODO: does not work correctly. The dashboard draws over everthing and when files are opened again, they cannot be seen.
-vim.keymap.set("n", "<leader>C", "<Cmd>bufdo bdelete<CR><Cmd>lua Snacks.dashboard()<CR>", { desc = "close all buffers" })
+vim.keymap.set("n", "<leader>C", "<Cmd>bufdo bdelete<CR><Cmd>Alpha<CR>", { desc = "close all buffers" })
 
 --Close current Buffer remap and go to header file
 vim.keymap.set("n", "<leader>c", "<Cmd>bdelete<CR>", { desc = "close current buffer" })
@@ -50,13 +50,13 @@ vim.keymap.set("n", "<leader>sz", "<Cmd>cwindow<CR>", { desc = "Open quickfix li
 --unmap keys
 -- vim.keymap.set('n', 'x', '<Nop>', { silent = true })
 -- vim.keymap.set('v', 'x', '<Nop>', { silent = true })
-vim.keymap.set("v", "s", "<Nop>", { silent = true }) --Fix: mini-ai not working correctly
-vim.keymap.set("n", "s", "<Nop>", { silent = true }) --Fix: mini-ai not working correctly
+-- vim.keymap.set("v", "s", "<Nop>", { silent = true }) --Fix: mini-ai not working correctly
+-- vim.keymap.set("n", "s", "<Nop>", { silent = true }) --Fix: mini-ai not working correctly
 
-vim.keymap.set("s", "s", "s", { silent = true }) --Fix: s not working in select mode
-vim.keymap.set("s", "S", "S", { silent = true }) --Fix: s not working in select mode
-vim.keymap.set("s", "K", "K", { silent = true }) --Fix: Map back the KJ motions to normal in select mode
-vim.keymap.set("s", "J", "J", { silent = true }) --Fix: Map back the KJ motions to normal in select mode
+-- vim.keymap.set("s", "s", "s", { silent = true }) --Fix: s not working in select mode
+-- vim.keymap.set("s", "S", "S", { silent = true }) --Fix: s not working in select mode
+-- vim.keymap.set("s", "K", "K", { silent = true }) --Fix: Map back the KJ motions to normal in select mode
+-- vim.keymap.set("s", "J", "J", { silent = true }) --Fix: Map back the KJ motions to normal in select mode
 
 --INFO: user command
 

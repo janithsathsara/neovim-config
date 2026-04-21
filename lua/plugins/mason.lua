@@ -45,6 +45,7 @@ return {
 					"marksman",
 					"ruff",
 					"rust-analyzer",
+					"selene",
 					"tailwindcss-language-server",
 					"taplo",
 					"tinymist",

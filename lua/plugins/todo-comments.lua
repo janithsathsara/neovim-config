@@ -6,11 +6,12 @@ return {
 			"BufReadPre",
 			"BufNewFile",
 		},
-		opts = {},
 		keys = {
 			{
 				"<leader>ft",
-				"<Cmd>lua Snacks.picker.todo_comments()<CR>",
+				function()
+					require("tv").tv_channel("todo-comments")
+				end,
 				"n",
 				desc = "Find todos",
 			},

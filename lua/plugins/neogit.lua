@@ -5,8 +5,6 @@ return {
 		cmd = "Neogit",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
-			"sindrets/diffview.nvim", --  Diff integration
-			"folke/snacks.nvim",
 		},
 		config = function()
 			local neogit = require("neogit")
@@ -15,7 +13,6 @@ return {
 				disable_relative_line_numbers = false,
 				integrations = {
 					diffview = true,
-					snacks = true,
 				},
 			})
 		end,
@@ -26,12 +23,6 @@ return {
 				function()
 					require("neogit").open({ "commit" })
 				end,
-				"n",
-				desc = "Neogit commit",
-			},
-			{
-				"<leader>gl",
-				"<CMD>Neogit log<CR>",
 				"n",
 				desc = "Neogit commit",
 			},

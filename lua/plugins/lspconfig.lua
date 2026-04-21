@@ -11,23 +11,27 @@ return {
 
 		vim.api.nvim_create_autocmd("LspAttach", {
 			group = vim.api.nvim_create_augroup("UserLspConfig", {}),
-			callback = function()
-				keymap.set("n", "gd", Snacks.picker.lsp_definitions, { desc = "LSP Definition" })
-				keymap.set("n", "grt", Snacks.picker.lsp_type_definitions, { desc = "LSP Type Definition" })
-				keymap.set("n", "grr", Snacks.picker.lsp_references, { desc = "LSP References", nowait = true })
-				keymap.set("n", "gri", Snacks.picker.lsp_implementations, { desc = "LSP Implementations" })
-				keymap.set("n", "<leader>ls", Snacks.picker.lsp_symbols, { desc = "LSP Symbols" })
-				keymap.set("n", "<leader>lD", vim.lsp.buf.declaration, { desc = "LSP declaration" })
-				keymap.set({ "n", "v" }, "gra", vim.lsp.buf.code_action, { desc = "LSP code actions" })
-				keymap.set("n", "grn", vim.lsp.buf.rename, { desc = "Smart rename" })
-				keymap.set("n", "<leader>ld", vim.diagnostic.open_float, { desc = "Show line diagnosis" })
-				keymap.set("n", "K", function()
+			callback = function(event)
+				local map = function(mode, lhs, rhs, opts)
+					keymap.set(mode, lhs, rhs, vim.tbl_extend("force", { buffer = event.buf }, opts or {}))
+				end
+
+				map("n", "gd", vim.lsp.buf.definition, { desc = "LSP Definition" })
+				map("n", "grt", vim.lsp.buf.type_definition, { desc = "LSP Type Definition" })
+				map("n", "grr", vim.lsp.buf.references, { desc = "LSP References", nowait = true })
+				map("n", "gri", vim.lsp.buf.implementation, { desc = "LSP Implementations" })
+				map("n", "<leader>ls", vim.lsp.buf.document_symbol, { desc = "LSP Symbols" })
+				map("n", "<leader>lD", vim.lsp.buf.declaration, { desc = "LSP declaration" })
+				map({ "n", "v" }, "gra", vim.lsp.buf.code_action, { desc = "LSP code actions" })
+				map("n", "grn", vim.lsp.buf.rename, { desc = "Smart rename" })
+				map("n", "<leader>ld", vim.diagnostic.open_float, { desc = "Show line diagnosis" })
+				map("n", "K", function()
 					vim.lsp.buf.hover({ border = "rounded" })
 				end, { desc = "Show documentation for what is under cursor" })
-				keymap.set({ "n", "v", "s" }, "<M-s>", function()
+				map({ "n", "v", "s" }, "<M-k>", function()
 					vim.lsp.buf.signature_help({ border = "rounded" })
 				end, { desc = "Show documentation for what is under cursor" })
-				keymap.set("n", "<leader>rs", "<CMD>LspRestart<CR>", { desc = "Restart LSP" })
+				map("n", "<leader>rs", "<CMD>LspRestart<CR>", { desc = "Restart LSP" })
 			end,
 		})
 
