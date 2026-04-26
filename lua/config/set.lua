@@ -117,7 +117,7 @@ vim.api.nvim_create_autocmd("VimResized", {
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "<filetype>" },
+	pattern = { "*" },
 	callback = function()
 		pcall(vim.treesitter.start)
 	end,

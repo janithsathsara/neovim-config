@@ -154,27 +154,6 @@ return {
 			end,
 		})
 
-		vim.lsp.config("docker_language_server", {
-			filetypes = { "dockerfile", "yaml.compose", "yaml.docker-compose" },
-			root_markers = {
-				"Dockerfile",
-				"docker-compose.yaml",
-				"docker-compose.yml",
-				"compose.yaml",
-				"compose.yml",
-				"docker-bake.json",
-				"docker-bake.hcl",
-				"docker-bake.override.json",
-				"docker-bake.override.hcl",
-			},
-			cmd = {
-				"docker-language-server",
-				"start",
-				"--stdio",
-			},
-		})
-		vim.lsp.enable("docker_language_server")
-
 		-- Docker
 		vim.lsp.config("docker_language_server", {
 			filetypes = { "dockerfile", "yaml.compose", "yaml.docker-compose" },

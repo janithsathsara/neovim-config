@@ -49,6 +49,8 @@ local function launch_lines(lines, opts, on_select)
 		title_pos = "center",
 	})
 
+	vim.opt.termguicolors = true
+
 	local cmd = {
 		binary,
 		"--no-remote",
