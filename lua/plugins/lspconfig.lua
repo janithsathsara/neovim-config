@@ -215,8 +215,8 @@ return {
 		--hyprlang
 		vim.lsp.config("hyprls", {
 			filetypes = { "hyprlang" },
-			{ "hyprls", "--stdio" },
-			{ ".git" },
+			cmd = { "hyprls", "--stdio" },
+			root_markers = { ".git" },
 		})
 		vim.lsp.enable("hyprls")
 
