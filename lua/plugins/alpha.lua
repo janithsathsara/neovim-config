@@ -47,8 +47,8 @@ return {
 		dashboard.section.header.opts.hl = "AlphaHeader"
 
 		dashboard.section.buttons.val = {
-			dashboard.button("f", "󰱼  Find files", "<cmd>Tv files<cr>"),
-			dashboard.button("w", "  Grep text", "<cmd>Tv text<cr>"),
+			dashboard.button("f", "󰱼  Find files", "<cmd>lua require('fff').find_files()<cr>"),
+			dashboard.button("w", "  Grep text", "<cmd>lua require('fff').live_grep()<cr>"),
 			dashboard.button("r", "󰁯  Recent files", "<cmd>Tv recent-files<cr>"),
 			dashboard.button("t", "  TV channels", "<cmd>Tv<cr>"),
 			dashboard.button("q", "  Quit", "<cmd>qa<cr>"),

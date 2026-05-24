@@ -13,6 +13,8 @@ vim.keymap.set("n", "<leader>Y", '"+Y')
 vim.keymap.set("i", "<C-l>", function()
 	return "<Delete>"
 end, { noremap = true, silent = true, expr = true, desc = "delete rightside in insert mode" })
+vim.keymap.set("x", "p", [["_dP]], { desc = "Paste over selection without losing yanked text" })
+vim.keymap.set({ "n", "v" }, "<C-d>", [["_d]], { desc = "Delete without yanking" })
 
 --NOTE:packages
 vim.keymap.set("n", "<leader>pl", "<Cmd>Lazy<CR>")

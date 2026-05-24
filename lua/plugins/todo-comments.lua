@@ -10,10 +10,10 @@ return {
 			{
 				"<leader>ft",
 				function()
-					require("tv").tv_channel("todo-comments")
+					require("fff").live_grep({ query = "TODO|WARN|HACK|FIX|NOTE", grep = { modes = { "regex" } } })
 				end,
 				"n",
-				desc = "Find todos",
+				desc = "Find Todos",
 			},
 		},
 	},
