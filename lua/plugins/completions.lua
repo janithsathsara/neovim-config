@@ -5,6 +5,7 @@ return {
 		event = {
 			"BufReadPre",
 			"BufNewFile",
+			"CmdlineEnter",
 		},
 		-- Optional: provides snippets for the snippet source
 		dependencies = {

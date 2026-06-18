@@ -16,6 +16,8 @@ vim.opt.ruler = true
 
 --Deactivate native auto-complete
 vim.opt.complete = ""
+vim.opt.wildmenu = false
+vim.opt.wildmode = ""
 
 vim.opt.wrap = false
 
