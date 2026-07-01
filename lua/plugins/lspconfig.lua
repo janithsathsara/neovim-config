@@ -3,8 +3,6 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	dependencies = {
 		"saghen/blink.cmp",
-		{ "antosha417/nvim-lsp-file-operations", config = true },
-		{ "folke/neodev.nvim", opts = {} },
 	},
 	config = function()
 		local keymap = vim.keymap
@@ -31,7 +29,7 @@ return {
 				map({ "n", "v", "s" }, "<M-k>", function()
 					vim.lsp.buf.signature_help({ border = "rounded" })
 				end, { desc = "Show documentation for what is under cursor" })
-				map("n", "<leader>rs", "<CMD>LspRestart<CR>", { desc = "Restart LSP" })
+				map("n", "<leader>rs", "<CMD>lsp restart<CR>", { desc = "Restart LSP" })
 			end,
 		})
 

@@ -1,10 +1,7 @@
 return {
 	"m4xshen/hardtime.nvim",
 	lazy = true,
-	event = {
-		"BufReadPre",
-		"BufNewFile",
-	},
+	cmd = "Hardtime",
 	dependencies = { "MunifTanjim/nui.nvim" },
-	opts = { enabled = true },
+	opts = { enabled = false },
 }

@@ -108,6 +108,7 @@ return {
 					border = "rounded",
 					draw = { gap = 2, columns = { { "label", "label_description", gap = 2 }, { "kind_icon", "source_name", gap = 2 } } },
 				},
+				ghost_text = { enabled = true },
 				documentation = { auto_show = true, window = { border = "rounded" } },
 			},
 			signature = {
