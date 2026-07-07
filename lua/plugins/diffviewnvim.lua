@@ -1,7 +1,15 @@
 return {
-	"sindrets/diffview.nvim",
+	"dlyongemallo/diffview-plus.nvim",
 	lazy = true,
+	version = "*",
 	config = true,
+	cmd = {
+		"DiffviewOpen",
+		"DiffviewToggle",
+		"DiffviewFileHistory",
+		"DiffviewDiffFiles",
+		"DiffviewLog",
+	},
 	keys = {
 		{
 			"<leader>gd",
