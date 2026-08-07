@@ -2,16 +2,19 @@ return {
 	{
 		"folke/todo-comments.nvim",
 		lazy = true,
+		cmd = {
+			"Trouble todo",
+			"TodoFzfLua",
+		},
 		event = {
 			"BufReadPre",
 			"BufNewFile",
 		},
+		opts = {},
 		keys = {
 			{
 				"<leader>ft",
-				function()
-					require("fff").live_grep({ query = "TODO|WARN|HACK|FIX|NOTE", grep = { modes = { "regex" } } })
-				end,
+				"<cmd>TodoFzfLua<CR>",
 				"n",
 				desc = "Find Todos",
 			},
