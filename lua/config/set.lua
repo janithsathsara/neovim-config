@@ -96,12 +96,15 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
 	end,
 })
 
--- open manpages as a vertical split
+-- open manpages
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = "man",
+	pattern = "man*",
 	callback = function()
-		vim.opt.number = true
-		vim.opt.relativenumber = true
+		if vim.bo.buftype == "nofile" then
+			vim.cmd.wincmd("L")
+			vim.opt.number = true
+			vim.opt.relativenumber = true
+		end
 	end,
 })
 
