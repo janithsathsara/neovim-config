@@ -69,8 +69,15 @@ vim.opt.cmdheight = 1
 
 --spell
 
-vim.opt.spell = true
+vim.opt.spell = false
 vim.opt.spelllang = "en_us"
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "text", "markdown", "typst" },
+	callback = function()
+		vim.opt.spell = true
+	end,
+})
 
 vim.api.nvim_create_autocmd("TextYankPost", {
 	pattern = "*",
