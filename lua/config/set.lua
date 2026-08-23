@@ -43,7 +43,7 @@ vim.opt.showtabline = 0
 vim.opt.foldcolumn = "0"
 vim.opt.cursorcolumn = false
 
--- these two were required to fix the cursorline not correctly showing issue
+-- these two were required to fix the cursor line not correctly showing issue
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = "both"
 
@@ -54,11 +54,11 @@ vim.opt.foldlevel = 99
 
 vim.lsp.inlay_hint.enable(true)
 
--- vim.opt.isfname:append("@-@")
+-- vim.opt.ifname:append("@-@")
 
 vim.opt.updatetime = 50
 
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "120"
 
 vim.opt.shortmess:append("a")
 vim.opt.shortmess:append("t")
@@ -66,6 +66,11 @@ vim.opt.shortmess:append("C")
 vim.opt.shortmess:append("I")
 
 vim.opt.cmdheight = 1
+
+--spell
+
+vim.opt.spell = true
+vim.opt.spelllang = "en_us"
 
 vim.api.nvim_create_autocmd("TextYankPost", {
 	pattern = "*",
@@ -96,7 +101,7 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
 	end,
 })
 
--- open manpages
+-- open man pages
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "man*",
 	callback = function()
@@ -108,7 +113,7 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
--- No more autocommets in newlines
+-- No more auto comments in newlines
 vim.api.nvim_create_autocmd("FileType", {
 	group = vim.api.nvim_create_augroup("no_auto_comment", {}),
 	callback = function()
@@ -116,7 +121,7 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
--- Auto rezide splits
+-- Auto resize splits
 vim.api.nvim_create_autocmd("VimResized", {
 	command = "wincmd =",
 })
