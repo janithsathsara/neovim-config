@@ -145,3 +145,11 @@ vim.api.nvim_create_user_command("ConformToggle", function()
 	local status = vim.g.disable_auto_format and "OFF" or "ON"
 	vim.notify("Auto Format: " .. status, vim.log.levels.INFO)
 end, {})
+
+vim.api.nvim_create_user_command("Scratch", function()
+	vim.cmd("enew")
+	vim.bo.buftype = "nofile"
+	vim.bo.bufhidden = "hide"
+	vim.bo.swapfile = false
+	vim.notify("Scratch Buffer", vim.log.levels.INFO)
+end, {})
