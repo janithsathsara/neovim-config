@@ -68,14 +68,27 @@ return {
 					stdin = true,
 				},
 			},
+			format_on_save = function(bufnr)
+				if vim.g.disable_auto_format then
+					return nil
+				end
+				return {
+					timeout_ms = 500,
+					lsp_fallback = false,
+				}
+			end,
 		})
 		vim.api.nvim_create_autocmd("BufWritePre", {
 			pattern = "*",
 			callback = function(args)
-				conform.format({
-					bufnr = args.buf,
-					lsp_fallback = false,
-				})
+				if vim.g.disable_auto_format then
+					return nil
+				else
+					conform.format({
+						bufnr = args.buf,
+						lsp_fallback = false,
+					})
+				end
 			end,
 		})
 	end,
@@ -89,6 +102,16 @@ return {
 					timeout_ms = 1000,
 				})
 			end,
+			mode = {
+				"n",
+				"v",
+			},
+
+			desc = "Format file or range (in visual mode)",
+		},
+		{
+			"<leader>lt",
+			"<cmd>ConformToggle<cr>",
 			mode = {
 				"n",
 				"v",

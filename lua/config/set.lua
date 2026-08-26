@@ -139,3 +139,9 @@ vim.api.nvim_create_autocmd("FileType", {
 		pcall(vim.treesitter.start)
 	end,
 })
+
+vim.api.nvim_create_user_command("ConformToggle", function()
+	vim.g.disable_auto_format = not vim.g.disable_auto_format
+	local status = vim.g.disable_auto_format and "OFF" or "ON"
+	vim.notify("Auto Format: " .. status, vim.log.levels.INFO)
+end, {})
