@@ -41,7 +41,7 @@ return {
 			desc = "Select 2 from harpoon menu",
 		},
 		{
-			"<C-c>",
+			"<M-h>",
 			function()
 				require("harpoon"):list():select(3)
 			end,
@@ -49,7 +49,7 @@ return {
 			desc = "Select 3 from harpoon menu",
 		},
 		{
-			"<C-,>",
+			"<M-g>",
 			function()
 				require("harpoon"):list():select(4)
 			end,
