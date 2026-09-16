@@ -75,7 +75,7 @@ return {
 					return nil
 				end
 				return {
-					timeout_ms = 500,
+					timeout_ms = 3500,
 					lsp_fallback = false,
 				}
 			end,
@@ -101,7 +101,7 @@ return {
 				require("conform").format({
 					lsp_fallback = true,
 					async = false,
-					timeout_ms = 1000,
+					timeout_ms = 3500,
 				})
 			end,
 			mode = {
