@@ -53,8 +53,10 @@ return {
 				},
 				clang_format = {
 					prepend_args = {
+						-- "--style",
+						-- "{IndentWidth: 4, TabWidth: 4, UseTab: Never}",
 						"--style",
-						"{IndentWidth: 4, TabWidth: 4, UseTab: Never}",
+						"{IndentWidth: 4, TabWidth: 4, UseTab: Never, ColumnLimit: 80, BreakAfterOpenBracketBracedList: true, BreakBeforeCloseBracketBracedList: true, BinPackArguments: false, BinPackParameters: false, Cpp11BracedListStyle: false}",
 					},
 				},
 				prettierd = {
