@@ -1,38 +1,38 @@
 return {
 	{
 		"rezniqov/soviet.nvim",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			require("soviet").setup({
-
-				transparent_background = true,
-			})
-			vim.cmd.colorscheme("soviet-dark")
-			-- vim.cmd.colorscheme("soviet-light")
-		end,
+		lazy = true,
+		-- priority = 1000,
+		-- config = function()
+		-- 	require("soviet").setup({
+		--
+		-- 	transparent_background = true,
+		-- 	})
+		-- 	vim.cmd.colorscheme("soviet-dark")
+		-- 	-- vim.cmd.colorscheme("soviet-light")
+		-- end,
 	},
 	{
 		"catppuccin/nvim",
-		lazy = true,
+		lazy = false,
 		name = "catppuccin",
-		-- priority = 1000,
-		-- 	config = function()
-		-- 		require("catppuccin").setup({
-		-- 			flavour = "mocha", -- latte, frappe, macchiato, mocha
-		-- 			integrations = { alpha = true },
-		-- 			transparent_background = true,
-		-- 			highlight_overrides = {
-		-- 				all = function()
-		-- 					return {
-		-- 						LineNr = { fg = "#89dceb" },
-		-- 						CursorLineNr = { fg = "#f38ba8" },
-		-- 					}
-		-- 				end,
-		-- 			},
-		-- 		})
-		-- 		vim.cmd.colorscheme("catppuccin-mocha")
-		-- 	end,
+		priority = 1000,
+		config = function()
+			require("catppuccin").setup({
+				flavour = "mocha", -- latte, frappe, macchiato, mocha
+				integrations = { alpha = true },
+				transparent_background = true,
+				highlight_overrides = {
+					all = function()
+						return {
+							LineNr = { fg = "#89dceb" },
+							CursorLineNr = { fg = "#f38ba8" },
+						}
+					end,
+				},
+			})
+			vim.cmd.colorscheme("catppuccin-mocha")
+		end,
 	},
 
 	{

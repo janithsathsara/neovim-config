@@ -14,6 +14,11 @@ return {
 				integrations = {
 					diffview = true,
 				},
+				signs = {
+					hunk = { "", "" },
+					item = { "", "" },
+					section = { "", "" },
+				},
 			})
 		end,
 		keys = {

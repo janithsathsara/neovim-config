@@ -57,10 +57,10 @@ return {
 					"codelldb", -- Rust debugging
 					"debugpy",
 					"delve", -- Go debugging
-					"eslint_d",
 					"goimports",
 					"js-debug-adapter",
 					"oxlint",
+					"oxfmt",
 					"prettierd",
 					"shellcheck", -- Bash linter
 					"stylua",

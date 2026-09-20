@@ -1,12 +1,11 @@
-vim.g.snacks_animate = false
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.guicursor = ""
 
+vim.opt.expandtab = false
 vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
+vim.opt.softtabstop = 4
 
 vim.opt.smartindent = true
 
@@ -26,7 +25,9 @@ vim.opt.backup = false
 vim.opt.undofile = true
 vim.opt.fileformats = { "unix", "dos" }
 vim.opt.fillchars = { eob = " " } -- character that appears after line ending
-
+vim.opt.list = true
+vim.opt.listchars = "tab: ,space:·,trail:•,extends:⟩,precedes:⟨"
+							
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
 vim.opt.winborder = "single"

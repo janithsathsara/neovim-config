@@ -1,0 +1,20 @@
+{
+	"$schema": "/home/blackpearl/.local/share/nvim/mason/packages/oxlint/node_modules/oxlint/configuration_schema.json",
+	"plugins": ["node"],
+	"env": {
+		"node": true,
+		"es2024": true,
+	},
+	"categories": {
+		"correctness": "error",
+		"suspicious": "warn",
+	},
+	"rules": {
+		"no-console": "off",
+		"eqeqeq": ["error", "always"],
+		"curly": ["error", "multi-line"],
+		"no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
+		"no-unreachable": "error",
+	},
+	"ignorePatterns": ["node_modules/**", "dist/**"],
+}

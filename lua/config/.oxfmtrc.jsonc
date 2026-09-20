@@ -1,0 +1,6 @@
+{
+	"$schema": "/home/blackpearl/.local/share/nvim/mason/packages/oxfmt/node_modules/oxfmt/configuration_schema.json",
+	"printWidth": 120,
+	"tabWidth": 4,
+	"useTabs": true,
+}

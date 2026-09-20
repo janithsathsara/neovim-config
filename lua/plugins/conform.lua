@@ -10,30 +10,25 @@ return {
 
 		conform.setup({
 			formatters_by_ft = {
-				sh = { "beautysh" },
-				cs = { "clang_format" },
 				c = { "clang_format" },
 				cpp = { "clang_format" },
+				cs = { "clang_format" },
 				go = { "goimports" },
-				html = { "prettierd" },
-				javascript = { "prettierd" },
-				javascriptreact = { "prettierd" },
-				json = { "prettierd" },
-				jsonc = { "prettierd" },
+				html = { "oxfmt" },
+				javascript = { "oxfmt" },
+				javascriptreact = { "oxfmt" },
+				jsonc = { "oxfmt" },
+				json = { "oxfmt" },
 				lua = { "stylua" },
-				markdown = { "prettierd" },
-				python = {
-					"ruff_fix",
-					"ruff_format",
-					"ruff_organize_imports",
-				},
+				markdown = { "oxfmt" },
+				python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
+				sh = { "beautysh" },
 				rust = { "rustfmt" },
-				svelte = { "prettierd" },
-				-- sh = { "shellcheck" },
+				svelte = { "oxfmt" },
+				toml = { "taplo" },
 				typescript = { "prettierd" },
 				typescriptreact = { "prettierd" },
 				typst = { "typstyle" },
-				toml = { "taplo" },
 				xml = { "xmllint" },
 			},
 			formatters = {
@@ -62,6 +57,14 @@ return {
 				prettierd = {
 					prepend_args = {
 						"--tab-width=4", -- Set tab width to 2 spaces
+					},
+				},
+				oxfmt = {
+					args = {
+						"-c",
+						"/home/blackpearl/.config/nvim/lua/config/.oxfmtrc.jsonc",
+						"--stdin-filepath",
+						"$FILENAME",
 					},
 				},
 				mdformat = {
