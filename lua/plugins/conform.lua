@@ -32,6 +32,11 @@ return {
 				xml = { "xmllint" },
 			},
 			formatters = {
+				beautysh = {
+					prepend_args = {
+						"--tab",
+					},
+				},
 				stylua = {
 					inherit = true,
 					prepend_args = {
